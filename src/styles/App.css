@@ -10,7 +10,7 @@
 /* Add a black background color to the top navigation */
 .topnav {
     /*background-color: #333;*/
-    background-color: #c63f17;
+    background: linear-gradient(to right, #ff7043, #c63f17 50%);
     overflow: hidden;
 }
 
@@ -23,6 +23,7 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    font-family: 'Righteous', sans-serif;
 }
 
 /* Change the color of links on hover */
@@ -34,6 +35,10 @@
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
     display: none;
+}
+
+.Logo {
+  font-family: 'Righteous', sans-serif;
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
@@ -87,21 +92,21 @@
   }
 
   .topnav.responsive .GamesLink {
-    background-color: #ff7043;
-  display:block;
-  animation: 0.5s ease-out 0s 1 slideInFromLeft;
+    background: linear-gradient(to right, #ff7043, #c63f17 50%);
+    display:block;
+    animation: 0.5s ease-out 0s 1 slideInFromLeft;
   }
 
   .topnav.responsive .NewGameLink {
-    background-color: #ff7043;
-  display:block;
-  animation: 0.7s ease-out 0s 1 slideInFromLeft;
+    background: linear-gradient(to right, #ff7043, #c63f17 50%);
+    display:block;
+    animation: 0.7s ease-out 0s 1 slideInFromLeft;
   }
 
   .topnav.responsive .LogOutLink {
-    background-color: #ff7043;
-  display:block;
-  animation: 0.9s ease-out 0s 1 slideInFromLeft;
+    background: linear-gradient(to right, #ff7043, #c63f17 50%);
+    display:block;
+    animation: 0.9s ease-out 0s 1 slideInFromLeft;
   }
 
   @keyframes slideInFromLeft {

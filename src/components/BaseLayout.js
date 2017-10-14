@@ -19,24 +19,24 @@ export default class BaseLayout extends Component {
 
   render () {
     return (
-
+      <div className='BaseLayout'>
         <header>
           <div className="topnav" id="myTopnav">
 
-            <NavLink activeClassName="selected" className="Logo" exact to="/">House Rules</NavLink>
+            <NavLink activeClassName="selected" className="Logo" exact to='/'>House Rules</NavLink>
 
             <NavLink activeClassName="selected"
             className="GamesLink" exact to='/games'>Games
             </NavLink>
 
-            <NavLink activeClassName="selected" className="NewGameLink" exact to="/newGame">Add New Game</NavLink>
+            <NavLink activeClassName="selected" className="NewGameLink" exact to='/newGame'>Add New Game</NavLink>
 
-            <NavLink activeClassName="selected" className="LogOutLink" to="#about">Log Out</NavLink>
+            <NavLink activeClassName="selected" className="LogOutLink" exact to="/">Log Out</NavLink>
 
             <div id='icon' className="icon" onClick={this.navToggle}>&#9776;</div>
           </div>
         </header>
-
+      </div>
     );
   }
 };
