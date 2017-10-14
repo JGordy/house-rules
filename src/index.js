@@ -12,20 +12,23 @@ import reducers from './reducers/reducer';
 
 // import components here
 import BaseLayout from './components/BaseLayout';
-// import GameList from './components/GameList';
-// import GameForm from './components/GameForm';
+import GameList from './containers/GameList';
+import GameForm from './components/GameForm';
 // import SingleGame from './components/SingleGame';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__&& window.__REDUX_DEVTOOLS_EXTENSION__())}>
-    <BrowserRouter>
-      <BaseLayout>
-        <Switch>
-          <Route exact path="/" component={App}/>
-        </Switch>
-      </BaseLayout>
-    </BrowserRouter>
-  </Provider>, document.getElementById('root'));
+<Provider store={createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
+  <BrowserRouter>
+    <BaseLayout>
+      <Switch>
+        <Route exact path="/" component={App} />
+        {/*<Route path='/games/:id' component={SingleGame} />*/}
+        <Route path='/games' component={GameList} />
+        <Route path='/newGame' component={GameForm} />
+      </Switch>
+    </BaseLayout>
+  </BrowserRouter>
+</Provider>, document.getElementById('root'));
 registerServiceWorker();
