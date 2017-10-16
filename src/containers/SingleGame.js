@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default class SingleGame extends Component {
   constructor(props) {
@@ -14,6 +14,7 @@ export default class SingleGame extends Component {
     var x = document.getElementById('myArrow');
     if (x.className === "material-icons") {
       x.className += " rotate";
+      this.props.history.push('#demo');
     } else {
       x.className = "material-icons";
     }
@@ -33,18 +34,39 @@ export default class SingleGame extends Component {
   }
 
   render() {
-    console.log(this.props);
     let game = this.state.game;
     return (
       <div className="singleGame">
         <div className='card card-block'>
+          <div className="title_block">
+            <div>
+              <h3 className='card-title alert'>{game.title}</h3>
+              <p className='game_category alert'>{game.category}</p>
+            </div>
+            <div className="arrow_container">
+              <Link to='/games'>
+                <i className="material-icons md-36">arrow_back</i>
+              </Link>
+            </div>
+          </div>
 
-          <h3 className='card-title'>{game.title}</h3>
+          <div className='alert icon_bar'>
+            <div>
+              <i className="material-icons group">group</i>
+              <p>Players</p>
+              <p className=''>Amount of players here</p>
+            </div>
+            <div>
+              <i className="material-icons face">face</i>
+              <p>Ages: </p>
+              <p className=''>Player age range here</p>
+            </div>
+          </div>
 
-          <p className='game_category'>{game.category}</p>
-
-          <h4>How to Win: <span>{game.objective}</span></h4>
-
+          <div className='alert game_objective'>
+            <h5>How to Win:</h5>
+            <p>{game.objective}</p>
+          </div>
 
           <div className='house_rules alert normal_rules'>
             <p><span>The normal rules:</span><br/>{game.original_rules}</p>

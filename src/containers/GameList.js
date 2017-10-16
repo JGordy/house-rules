@@ -34,6 +34,29 @@ export default class GameList extends Component {
     })
     return (
       <div className="GameList">
+        <h5 className="filter_header"> Filter Game Types</h5>
+        <div className="filter-bar">
+          <div>
+          <i className="material-icons card_hand">style</i>
+          <p>Card</p>
+          </div>
+
+          <div>
+          <i className="material-icons">widgets</i>
+          <p>Board</p>
+          </div>
+
+          <div>
+          <i className="material-icons">casino</i>
+          <p>Dice</p>
+          </div>
+
+          <div>
+          <i className="material-icons">golf_course</i>
+          <p>Rec Sports</p>
+          </div>
+
+        </div>
         {gamesList}
       </div>
     );
