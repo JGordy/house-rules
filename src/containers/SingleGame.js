@@ -38,14 +38,21 @@ export default class SingleGame extends Component {
     return (
       <div className="singleGame">
         <div className='card card-block'>
-          <h2 className='card-title'>{game.title}</h2>
+
+          <h3 className='card-title'>{game.title}</h3>
+
           <p className='game_category'>{game.category}</p>
-          <h4>{game.objective}</h4>
-          <p>{game.original_rules}</p>
-          <div className='house_rules'>
+
+          <h4>How to Win: <span>{game.objective}</span></h4>
+
+
+          <div className='house_rules alert normal_rules'>
+            <p><span>The normal rules:</span><br/>{game.original_rules}</p>
             <button className='btn' data-toggle="collapse" data-target="#demo" onClick={this.arrowToggle}><i className="material-icons" id="myArrow">expand_more</i></button>
-            <p id="demo" className="collapse alt_rules">{game.alternate_rules}</p>
           </div>
+
+          <p id="demo" className="collapse alt_rules alert"><span>The house rules:</span><br/>{game.alternate_rules}</p>
+
         </div>
       </div>
     );

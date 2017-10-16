@@ -65,6 +65,11 @@ Signup / Login Page Styling
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
+
+  .topnav {
+    height: 55px;
+  }
+
   .topnav a:not(:first-child) {
     display: none;
     opacity: 0;
@@ -103,7 +108,7 @@ Signup / Login Page Styling
     height: 193px;
     /*position: fixed;
     width: 100%;*/
-    /*transition: height 1s;*/
+    transition: height 0.7s;
   }
 
   .topnav.responsive .icon {
@@ -228,8 +233,17 @@ Signup / Login Page Styling
     width: 97%;
   }
 
+  .singleGame h3 {
+    margin-bottom: 0rem;
+  }
+
+  .singleGame .game_category {
+    margin-bottom: 1rem;
+  }
+
   .house_rules {
     display: flex;
+    justify-content: space-between;
   }
 
   .house_rules .btn {
@@ -237,8 +251,8 @@ Signup / Login Page Styling
     background-color: transparent;
     border: none;
     display: flex;
+    height: 2rem;
     justify-content: center;
-    margin-right: 1rem;
     padding: 0.25rem;
   }
 
@@ -266,6 +280,24 @@ Signup / Login Page Styling
 
   #demo {
     margin-bottom: 0px;
+  }
+
+
+
+  .normal_rules {
+    background-color: #eee;
+    border: 2px solid darkgray;
+    color: gray;
+  }
+
+  .alt_rules {
+    background-color: #ffbb93;
+    border: 2px solid #c63f17;
+    color: #c63f17;
+  }
+
+  .alert span {
+    font-size: 1.7rem;
   }
 
 }

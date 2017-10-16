@@ -30,7 +30,7 @@ export default class BaseLayout extends Component {
             className="GamesLink" to='/games'><i className="material-icons">casino</i>Games
             </Link>
 
-            <Link className="NewGameLink" to='/newGame'onClick={this.navToggle}><i className="material-icons">add</i>Add New Game</Link>
+            <Link className="NewGameLink" to='/newGame'><i className="material-icons">add</i>Add New Game</Link>
 
             <Link className="LogOutLink" to="/"><i className="material-icons">chevron_left</i>Log Out</Link>
 
