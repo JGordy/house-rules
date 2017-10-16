@@ -5,7 +5,20 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>App Component</h1>
+
+        <div className='form-group login'>
+          <input type='text' className="form-control" placeholder='Username' />
+          <input type='password' className="form-control" placeholder='Password' />
+          <button type='submit'>Log In</button>
+        </div>
+
+        <div className='form-group signup'>
+          <input type='text' className="form-control" placeholder='Username' />
+          <input type='email' className="form-control" placeholder='Email' />
+          <input type='password' className="form-control" placeholder='Password' />
+          <button type='submit'>Sign Up</button>
+        </div>
+
       </div>
     );
   }

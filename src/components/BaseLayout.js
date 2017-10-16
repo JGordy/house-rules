@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default class BaseLayout extends Component {
   constructor(props) {
@@ -20,22 +21,22 @@ export default class BaseLayout extends Component {
   render () {
     return (
       <div className='BaseLayout'>
-        <header>
-          <div className="topnav" id="myTopnav">
 
-            <NavLink activeClassName="selected" className="Logo" exact to='/'>House Rules</NavLink>
+          <nav className="topnav" id="myTopnav">
 
-            <NavLink activeClassName="selected"
-            className="GamesLink" exact to='/games'>Games
-            </NavLink>
+            <Link className="Logo" to='/'>House Rules</Link>
 
-            <NavLink activeClassName="selected" className="NewGameLink" exact to='/newGame'>Add New Game</NavLink>
+            <Link
+            className="GamesLink" to='/games'><i className="material-icons">casino</i>Games
+            </Link>
 
-            <NavLink activeClassName="selected" className="LogOutLink" exact to="/">Log Out</NavLink>
+            <Link className="NewGameLink" to='/newGame'onClick={this.navToggle}><i className="material-icons">add</i>Add New Game</Link>
+
+            <Link className="LogOutLink" to="/"><i className="material-icons">chevron_left</i>Log Out</Link>
 
             <div id='icon' className="icon" onClick={this.navToggle}>&#9776;</div>
-          </div>
-        </header>
+          </nav>
+            {this.props.children}
       </div>
     );
   }
