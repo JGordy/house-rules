@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import { getGameList } from '../actions/action';
 import { Link } from 'react-router-dom';
 
-export default class GameList extends Component {
+class GameList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,18 +11,30 @@ export default class GameList extends Component {
     }
   }
 
+// filtering game list data
+  generateGameList = (filter) => {
+    let gameData;
+    if (filter === 'all') {
+      // gameData = this.props.gamesList;
+      this.setState({games: this.props.gamesList});
+    } else {
+      let filteredGames = this.props.gamesList.filter(game => {
+        return game.category === filter;
+      });
+      // gameData = filteredGames;
+      console.log("filteredGames", filteredGames)
+      this.setState({games: filteredGames});
+    }
+  };
+
   componentDidMount() {
-    fetch('https://dry-forest-51238.herokuapp.com/api/games')
-    .then(response => {
-      return response.json()
-    })
-    .then(data => {
-      this.setState({games: data})
-    })
-  }
+    this.props.getGameList();
+  };
 
   render () {
     // map over game data array
+    console.log('THIS.STATE.GAMES: ', this.state.games);
+    console.log('THIS.PROPS.gamesList:', this.props.gamesList);
     let gamesList = this.state.games.map((game) => {
       return <div key={game.id} className="each_game card-block card">
               <Link to={`/games/${game.id}`}>
@@ -36,25 +50,31 @@ export default class GameList extends Component {
       <div className="GameList">
         <h5 className="filter_header"> Filter Game Types</h5>
         <div className="filter-bar">
-          <div>
+
+          <Link to="#" onClick={() => this.generateGameList('all')}>
+          <i className="material-icons all_games_filter">dns</i>
+          <p><span className="">All</span></p>
+          </Link>
+
+          <Link to="#" onClick={() => this.generateGameList('card')}>
           <i className="material-icons card_hand">style</i>
-          <p>Card</p>
-          </div>
+          <p><span className="">Card</span></p>
+          </Link>
 
-          <div>
-          <i className="material-icons">widgets</i>
-          <p>Board</p>
-          </div>
+          <Link to="#" onClick={() => this.generateGameList('board')}>
+          <i className="material-icons">dashboard</i>
+          <p><span className="">Board</span></p>
+          </Link>
 
-          <div>
+          <Link to="#" onClick={() => this.generateGameList('dice')}>
           <i className="material-icons">casino</i>
-          <p>Dice</p>
-          </div>
+          <p><span className="">Dice</span></p>
+          </Link>
 
-          <div>
+          <Link to="#" onClick={() => this.generateGameList('recreational sports')}>
           <i className="material-icons">golf_course</i>
-          <p>Rec Sports</p>
-          </div>
+          <p><span className="">Rec Sports</span></p>
+          </Link>
 
         </div>
         {gamesList}
@@ -62,3 +82,19 @@ export default class GameList extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+
+  return {
+    gamesList: state.gamesList,
+    filter: state.filter
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getGameList: () => dispatch(getGameList())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GameList);

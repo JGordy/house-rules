@@ -7,7 +7,8 @@ import registerServiceWorker from './registerServiceWorker';
 // additional imports from react-router-dom and redux
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import reduxThunk from 'redux-thunk';
 import reducers from './reducers/reducer';
 
 // import components here
@@ -16,10 +17,18 @@ import GameList from './containers/GameList';
 import GameForm from './components/GameForm';
 import SingleGame from './containers/SingleGame';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+// const createStoreWithMiddleware = applyMiddleware()(createStore);
+
+const store = createStore(
+    reducers,
+    compose(
+        applyMiddleware(reduxThunk),
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
+);
 
 ReactDOM.render(
-<Provider store={createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
+<Provider store={store}>
   <BrowserRouter>
     <BaseLayout>
       <Switch>

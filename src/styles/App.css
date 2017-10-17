@@ -11,7 +11,6 @@ Signup / Login Page Styling
   margin-top: 7px;
 }
 
-
 /***********************************
      /  Page Styling
 ************************************/
@@ -20,16 +19,11 @@ Signup / Login Page Styling
   padding: 0;
 }
 
-/* Add a black background color to the top navigation */
 .topnav {
-    /*background-color: #333;*/
     background: linear-gradient(to right, #ff7043, #c63f17 50%);
     overflow: hidden;
-    /*position: fixed;
-    width: 100%;*/
 }
 
-/* Style the links inside the navigation bar */
 .topnav a {
   color: #f2f2f2;
   float: left;
@@ -41,7 +35,6 @@ Signup / Login Page Styling
   font-family: 'Righteous', sans-serif;
 }
 
-/* Change the color of links on hover */
 .topnav a:hover {
     background-color: #ddd;
 }
@@ -54,10 +47,6 @@ Signup / Login Page Styling
 .Logo {
   font-family: 'Righteous', sans-serif;
 }
-
-/*.selected {
-  color: black;
-}*/
 
 .material-icons {
   margin-right: 10px;
@@ -75,8 +64,7 @@ Signup / Login Page Styling
     display: none;
     opacity: 0;
     height: 0;
-    /*transition: height 1s;*/
-}
+  }
 
   .topnav .icon {
     color: white;
@@ -95,7 +83,6 @@ Signup / Login Page Styling
 
   .topnav a:hover {
       background: linear-gradient(to right, #ff7043, #c63f17 50% );
-      /*color: black;*/
   }
 
   .form-group {
@@ -107,7 +94,6 @@ Signup / Login Page Styling
 
   div.form-group.login, div.form-group.signup {
     height: 50%;
-    /*margin-top: 2rem;*/
   }
 
   div.form-group.login {
@@ -126,8 +112,6 @@ Signup / Login Page Styling
   .topnav.responsive {
     position: relative;
     height: 193px;
-    /*position: fixed;
-    width: 100%;*/
     transition: height 0.7s;
   }
 
@@ -140,20 +124,16 @@ Signup / Login Page Styling
 
   .topnav.responsive a {
     float: none;
-    /*display: block;*/
     opacity: 1;
     height: 20px;
     text-align: left;
-    /*transition: height, opacity 1s;*/
   }
 
   .topnav.responsive a:hover {
       background-color: #ddd;
-      /*color: black;*/
   }
 
   .topnav.responsive .GamesLink {
-    /*background: linear-gradient(to right, #ff7043, #c63f17 50%);*/
     display:block;
     animation: 0.5s ease-out 0s 1 slideInFromLeft;
     margin-top: 15px;
@@ -161,14 +141,12 @@ Signup / Login Page Styling
   }
 
   .topnav.responsive .NewGameLink {
-    /*background: linear-gradient(to right, #ff7043, #c63f17 50%);*/
     display:block;
     animation: 0.7s ease-out 0s 1 slideInFromLeft;
     margin-top: 15px;
   }
 
   .topnav.responsive .LogOutLink {
-    /*background: linear-gradient(to right, #ff7043, #c63f17 50%);*/
     display:block;
     animation: 0.9s ease-out 0s 1 slideInFromLeft;
     margin-top: 15px;
@@ -179,7 +157,6 @@ Signup / Login Page Styling
 ************************************/
 
   .GameList {
-    /*background-color: #ddd;*/
     padding-top: 0.7rem;
   }
 
@@ -187,6 +164,12 @@ Signup / Login Page Styling
     color: #ff7043;
     display: flex;
     justify-content: space-around;
+  }
+
+  .GameList .filter-bar a {
+    color: #ff7043;
+    flex-basis: 20%;
+    text-align: center;
   }
 
   .filter_header {
@@ -205,17 +188,25 @@ Signup / Login Page Styling
   .filter-bar p {
     color: darkgray;
     font-size: 14px;
-    padding-left: 0.5rem;
+    text-align: center;
+  }
+
+  .filter-bar .badge-pill {
+    background-color: #ff7043;
+    color: white;
+  }
+
+  .GameList .material-icons {
+    margin-right: 0rem;
   }
 
   .each_game {
     border: none;
     border-radius: 0px;
     background-image: url('../images/gplaypattern.png');
-    /*background-size: contain;*/
-    /*background-attachment: fixed;*/
     box-shadow: 1px 1px 1px rgba(200, 200, 200, 0.5);
     margin: 0px auto 0.7rem auto;
+    min-height: 2rem;
     padding: 10px;
     padding-left: 0px;
     width: 99%;
