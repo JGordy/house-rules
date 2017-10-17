@@ -7,45 +7,63 @@ class GameList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      games: []
+      games: [],
+      filter: 'all'
     }
   }
 
 // filtering game list data
   generateGameList = (filter) => {
-    let gameData;
-    if (filter === 'all') {
-      // gameData = this.props.gamesList;
-      this.setState({games: this.props.gamesList});
-    } else {
-      let filteredGames = this.props.gamesList.filter(game => {
-        return game.category === filter;
-      });
-      // gameData = filteredGames;
-      console.log("filteredGames", filteredGames)
-      this.setState({games: filteredGames});
-    }
+    // if (filter === 'all') {
+    //   this.setState({games: this.props.gamesList});
+    // } else {
+    //   let filteredGames = this.props.gamesList.filter(game => {
+    //     return game.category === filter;
+    //   });
+    //   console.log("filteredGames", filteredGames)
+    //   this.setState({games: filteredGames});
+    // }
+    this.setState({filter: filter});
   };
 
   componentDidMount() {
     this.props.getGameList();
-  };
+  }
 
   render () {
     // map over game data array
-    console.log('THIS.STATE.GAMES: ', this.state.games);
-    console.log('THIS.PROPS.gamesList:', this.props.gamesList);
-    let gamesList = this.state.games.map((game) => {
-      return <div key={game.id} className="each_game card-block card">
-              <Link to={`/games/${game.id}`}>
-              <div className="game_initial"><h3>{game.title[0]}</h3></div>
-              <div>
-               <h4 className="game_title card-title">{game.title}</h4>
-               <p className="game_category">{game.category}</p>
-              </div>
-             </Link>
-             </div>;
-    })
+    // console.log('THIS.STATE.GAMES: ', this.state.games);
+    // console.log('THIS.PROPS.gamesList:', this.props.gamesList);
+    let gamesList;
+
+    if (this.state.filter === 'all') {
+      gamesList = this.props.gamesList.map((game) => {
+        return <div key={game.id} className="each_game card-block card">
+                <Link to={`/games/${game.id}`}>
+                <div className="game_initial"><h3>{game.title[0]}</h3></div>
+                <div>
+                 <h4 className="game_title card-title">{game.title}</h4>
+                 <p className="game_category">{game.category}</p>
+                </div>
+               </Link>
+               </div>;
+      })
+    } else if (this.state.filter !== 'all') {
+      let filteredGames = this.props.gamesList.filter(game => {
+        return game.category === this.state.filter;
+      });
+      gamesList = filteredGames.map((game) => {
+        return <div key={game.id} className="each_game card-block card">
+                <Link to={`/games/${game.id}`}>
+                <div className="game_initial"><h3>{game.title[0]}</h3></div>
+                <div>
+                 <h4 className="game_title card-title">{game.title}</h4>
+                 <p className="game_category">{game.category}</p>
+                </div>
+               </Link>
+               </div>;
+      })
+    }
     return (
       <div className="GameList">
         <h5 className="filter_header"> Filter Game Types</h5>
