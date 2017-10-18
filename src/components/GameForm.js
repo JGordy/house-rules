@@ -83,6 +83,7 @@ export default class GameForm extends Component {
         original_rules: '',
         alternate_rules: ''
       })
+      console.log("GAMEFORM THIS.PROPS: ",this.props);
       this.props.history.push('/games');
     } else {
       console.log("na ah ah, you didnt say the magic word");
@@ -119,7 +120,7 @@ export default class GameForm extends Component {
              <div className="form-check">
              <label className="form-check-label">
                  <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios2" value="board"
-                 checked={this.state.category === 'board'} onChange={this.handleCategoryChange}/>
+                 checked={this.state.category === 'board'} onChange={this.handleCategoryChange} />
                   Board
                </label>
                <div className="check"><div className="inside"></div></div>
@@ -128,7 +129,7 @@ export default class GameForm extends Component {
              <div className="form-check">
              <label className="form-check-label">
                  <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios3" value="dice"
-                 checked={this.state.category === 'dice'} onChange={this.handleCategoryChange}/>
+                 checked={this.state.category === 'dice'} onChange={this.handleCategoryChange} />
                   Dice
                </label>
                <div className="check"><div className="inside"></div></div>

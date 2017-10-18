@@ -16,6 +16,7 @@ import BaseLayout from './components/BaseLayout';
 import GameList from './containers/GameList';
 import GameForm from './components/GameForm';
 import SingleGame from './containers/SingleGame';
+import About from './components/About';
 
 // const createStoreWithMiddleware = applyMiddleware()(createStore);
 
@@ -36,6 +37,7 @@ ReactDOM.render(
         <Route exact path='/games/:id' component={SingleGame} />
         <Route exact path='/games' component={GameList} />
         <Route exact path='/newGame' component={GameForm} />
+        <Route exact path='/about' component={About} />
       </Switch>
     </BaseLayout>
   </BrowserRouter>
