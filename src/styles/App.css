@@ -37,7 +37,7 @@ Signup / Login Page Styling
 }
 
 .topnav a:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
 /* Hide the link that should open and close the topnav on small screens */
@@ -337,13 +337,12 @@ Signup / Login Page Styling
   }
 
   .icon_bar {
-    /*border-top: 1px solid lightgray;*/
     border-bottom: 1px solid lightgray;
     border-radius: 0px;
     display: flex;
     justify-content: space-around;
     margin: 0rem auto;
-    padding: 0.25rem 1rem;
+    padding: 1rem;
     width: 100%;
   }
 
@@ -364,6 +363,12 @@ Signup / Login Page Styling
     color: gray;
     font-size: 0.7rem;
     margin-bottom: 0rem;
+    text-align: center;
+  }
+
+  .game_objective {
+    background: linear-gradient( #efefef, #fff,#efefef );
+    color: #ff7043;
     text-align: center;
   }
 

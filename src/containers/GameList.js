@@ -24,6 +24,7 @@ class GameList extends Component {
 
   render () {
     // map over game data array
+    // TODO leaving these logs for the real api.
     // console.log('THIS.STATE.GAMES: ', this.state.games);
     // console.log('THIS.PROPS.gamesList:', this.props.gamesList);
     let gamesList;

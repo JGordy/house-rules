@@ -11,12 +11,12 @@ export default class SingleGame extends Component {
   }
 
   arrowToggle() {
-    var x = document.getElementById('myArrow');
-    if (x.className === "material-icons") {
-      x.className += " rotate";
+    var backArrow = document.getElementById('myArrow');
+    if (backArrow.className === "material-icons") {
+      backArrow.className += " rotate";
       this.props.history.push('#demo');
     } else {
-      x.className = "material-icons";
+      backArrow.className = "material-icons";
     }
   }
 
@@ -34,7 +34,26 @@ export default class SingleGame extends Component {
   }
 
   render() {
+
     let game = this.state.game;
+    let gameCategory = this.state.game.category;
+    let gameIcon;
+
+    if (gameCategory === "card") {
+      gameIcon = 'style';
+    } else if (gameCategory === "board") {
+      gameIcon = 'dashboard';
+    } else if (gameCategory === "dice") {
+      gameIcon = 'casino';
+    } else if (gameCategory === "recreational sports") {
+      gameIcon = "golf_course"
+    } else {
+      gameIcon = "widgets"
+    }
+
+
+
+
     return (
       <div className="singleGame">
         <div className='card card-block'>
@@ -51,15 +70,22 @@ export default class SingleGame extends Component {
           </div>
 
           <div className='alert icon_bar'>
+          <div>
+            <i className="material-icons group">{gameIcon}</i>
+            <p>Category</p>
+            <p>{game.category}</p>
+          </div>
             <div>
               <i className="material-icons group">group</i>
               <p>Players</p>
-              <p className=''>Amount of players here</p>
+              {/* Grab from new api data once deployed */}
+              <p className=''>Amount of players</p>
             </div>
             <div>
               <i className="material-icons face">face</i>
-              <p>Ages: </p>
-              <p className=''>Player age range here</p>
+              <p>Ages</p>
+              {/* Grab from new api data once deployed */}
+              <p className=''>Player age range</p>
             </div>
           </div>
 

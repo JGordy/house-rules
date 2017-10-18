@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-// import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import {withRouter} from "react-router-dom";
 
 class BaseLayout extends Component {
   constructor(props) {
     super(props);
-  //bind function for navbar here
+  //bind functions for navbar toggle and navigation here
   this.navToggle = this.navToggle.bind(this);
   this.handleNaviagation = this.handleNaviagation.bind(this);
   }
