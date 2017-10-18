@@ -39,20 +39,22 @@ export default class SingleGame extends Component {
     let gameCategory = this.state.game.category;
     let gameIcon;
 
-    if (gameCategory === "card") {
-      gameIcon = 'style';
-    } else if (gameCategory === "board") {
-      gameIcon = 'dashboard';
-    } else if (gameCategory === "dice") {
-      gameIcon = 'casino';
-    } else if (gameCategory === "recreational sports") {
-      gameIcon = "golf_course"
-    } else {
-      gameIcon = "widgets"
+    switch (gameCategory) {
+      case "card":
+        gameIcon = 'style';
+        break;
+      case "board":
+        gameIcon = 'dashboard';
+        break;
+      case "dice":
+        gameIcon = 'casino';
+        break;
+      case "recreational sports":
+        gameIcon = "golf_course";
+        break;
+      default:
+        gameIcon = "widgets"
     }
-
-
-
 
     return (
       <div className="singleGame">
@@ -78,14 +80,14 @@ export default class SingleGame extends Component {
             <div>
               <i className="material-icons group">group</i>
               <p>Players</p>
-              {/* Grab from new api data once deployed */}
-              <p className=''>Amount of players</p>
+              {/* Grab number of players from new api data once deployed */}
+              <p className=''>2-5</p>
             </div>
             <div>
               <i className="material-icons face">face</i>
               <p>Ages</p>
-              {/* Grab from new api data once deployed */}
-              <p className=''>Player age range</p>
+              {/* Grab Players age Range from new api data once deployed */}
+              <p className=''>13+</p>
             </div>
           </div>
 

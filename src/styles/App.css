@@ -22,6 +22,7 @@ Signup / Login Page Styling
 
 .topnav {
     background: linear-gradient(to right, #ff7043, #c63f17 50%);
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
 
@@ -83,7 +84,7 @@ Signup / Login Page Styling
   }
 
   .topnav a:hover {
-      background: linear-gradient(to right, #ff7043, #c63f17 50% );
+      background-color: transparent;
   }
 
   .form-group {
@@ -214,12 +215,12 @@ Signup / Login Page Styling
     border: none;
     border-radius: 0px;
     background-image: url('../images/gplaypattern.png');
-    box-shadow: 1px 1px 1px rgba(200, 200, 200, 0.5);
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
     margin: 0px auto 0.7rem auto;
     min-height: 2rem;
     padding: 10px;
     padding-left: 0px;
-    width: 99%;
+    width: 100%;
   }
 
   .each_game a {
@@ -230,6 +231,7 @@ Signup / Login Page Styling
     align-items: center;
     background-color: #ff7043;
     border-radius: 50%;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-basis: 3rem;
     justify-content: center;
@@ -367,7 +369,7 @@ Signup / Login Page Styling
   }
 
   .game_objective {
-    background: linear-gradient( #efefef, #fff,#efefef );
+    /*background: linear-gradient( #efefef, #fff,#efefef );*/
     color: #ff7043;
     text-align: center;
   }
@@ -424,7 +426,8 @@ Signup / Login Page Styling
     /*background-color: #ffbb93;
     border: 2px solid #c63f17;*/
     /*background-color: #fff;*/
-    background-image: url('../images/gplaypattern.png');
+    /*background-image: url('../images/gplaypattern.png');*/
+    background: linear-gradient( #efefef, #fff,#efefef );
     border-radius: 0px;
     box-shadow:
       inset 0px 11px 8px -10px #bbb,

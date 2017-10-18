@@ -18,15 +18,33 @@ import GameForm from './components/GameForm';
 import SingleGame from './containers/SingleGame';
 import About from './components/About';
 
-// const createStoreWithMiddleware = applyMiddleware()(createStore);
-
-const store = createStore(
+// Only chrome can handle the redux dev tool
+// redux compose cannot handle a null or undefined middleware
+if (window.navigator.userAgent.includes('Chrome')) {
+  var store = createStore(
     reducers,
     compose(
-        applyMiddleware(reduxThunk),
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+      applyMiddleware(reduxThunk),
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
-);
+  );
+} else {
+  var store = createStore(
+    reducers,
+    compose(
+      applyMiddleware(reduxThunk)
+    )
+  );
+}
+
+// const store = createStore(
+//     reducers,
+//     compose(
+//         applyMiddleware(reduxThunk)
+//         ,
+//         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+//     )
+// );
 
 ReactDOM.render(
 <Provider store={store}>
