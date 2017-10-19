@@ -102,7 +102,7 @@ export default class GameForm extends Component {
     return (
       <div className="gameForm" onLoad={this.props.navToggle}>
           <div className="form-group">
-            <input className="form-control" onChange={this.handleTitleChange} placeholder="Game title" required autofocus/>
+            <input className="form-control" onChange={this.handleTitleChange} placeholder="Game title" required autoFocus/>
           </div>
           <fieldset className="form-group">
            <legend>Game Category</legend>
