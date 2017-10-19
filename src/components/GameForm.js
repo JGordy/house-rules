@@ -7,6 +7,8 @@ export default class GameForm extends Component {
       title: '',
       category: 'card',
       objective: '',
+      number_of_players: '',
+      player_age_range: '',
       original_rules: '',
       alternate_rules: ''
     }
@@ -25,13 +27,21 @@ export default class GameForm extends Component {
       title: event.target.value,
       category: event.target.value,
       objective: event.target.value,
+      number_of_players: event.target.value,
+      player_age_range: event.target.value,
       original_rules: event.target.value,
       alternate_rules: event.target.value
     })
     let gameItem = JSON.stringify(this.state);
     console.log("THIS.STATE", this.state);
 
-    if ((this.state.title !== "") && (this.state.category !== "") && (this.state.objective !== "") && (this.state.original_rules !== "") && (this.state.alternate_rules !== "")) {
+    if ((this.state.title !== "") &&
+        (this.state.category !== "") &&
+        (this.state.objective !== "") && 
+        (this.state.original_rules !== "") &&
+        (this.state.alternate_rules !== "") &&
+        (this.state.number_of_players !== "") &&
+        (this.state.player_age_range !== "")) {
       console.log(this.state);
       fetch("https://dry-forest-51238.herokuapp.com/api/game/new",
         {
