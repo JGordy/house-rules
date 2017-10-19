@@ -604,12 +604,22 @@ Signup / Login Page Styling
     resize: none;
   }
 
+  .form_submits {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
   .gameForm button {
     /*background-color: #ff7043;*/
     background-color: #d7dd35;
     color: white;
-    margin: 0rem auto;
+    margin: 0.5rem auto;
     width: 40%;
+  }
+
+  .another_game_link {
+    color: #2cf;
   }
 
   /***********************************
@@ -636,10 +646,5 @@ Signup / Login Page Styling
     /*color: #ff7043;*/
     color: #2cf;
   }
-
-  /*.mb-0 a {
-    color: #d7dd35;
-  }*/
-
 
 }

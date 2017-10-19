@@ -20,8 +20,9 @@ import About from './components/About';
 
 // Only chrome can handle the redux dev tool
 // redux compose cannot handle a null or undefined middleware
+let store;
 if (window.navigator.userAgent.includes('Chrome')) {
-  var store = createStore(
+  store = createStore(
     reducers,
     compose(
       applyMiddleware(reduxThunk),
@@ -29,7 +30,7 @@ if (window.navigator.userAgent.includes('Chrome')) {
     )
   );
 } else {
-  var store = createStore(
+  store = createStore(
     reducers,
     compose(
       applyMiddleware(reduxThunk)

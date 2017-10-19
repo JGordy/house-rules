@@ -1,10 +1,10 @@
-import request from "superagent";
 import Cookies from 'js-cookie';
+import request from "superagent";
+
+
 export const GAME_SELECTED = "GAME_SELECTED";
 export const SET_DATA = "SET_DATA";
 export const SET_USER = "SET_USER";
-
-
 export const SET_TOKEN = 'SET_TOKEN';
 export const SET_ERROR = 'SET_ERROR';
 
@@ -19,12 +19,6 @@ const setError = makeActionCreator(SET_ERROR);
 
 const baseURL = "https://dry-forest-51238.herokuapp.com/api";
 const api = (path) => baseURL + path;
-
-
-
-
-
-
 
 export const register = ({
     email,
@@ -46,17 +40,6 @@ export const register = ({
             })
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 export const login = (email, password) => {
     return (dispatch) => {

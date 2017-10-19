@@ -10,45 +10,16 @@ export default class GameForm extends Component {
       original_rules: '',
       alternate_rules: ''
     }
-    this.handleTitleChange = this.handleTitleChange.bind(this);
-    this.handleCategoryChange = this.handleCategoryChange.bind(this);
-    this.handleObjectiveChange = this.handleObjectiveChange.bind(this);
-    this.handleOriginalRulesChange = this.handleOriginalRulesChange.bind(this);
-    this.handleAlternateRulesChange = this.handleAlternateRulesChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleTitleChange(event) {
-    this.setState({
-      title: event.target.value
-    })
+  handleUpdateState = (field) => {
+    return (event) => {
+      this.setState({[field]: event.target.value})
+    }
   }
 
-  handleCategoryChange(event) {
-    this.setState({
-      category: event.target.value
-    })
-  }
-
-  handleObjectiveChange(event) {
-    this.setState({
-      objective: event.target.value
-    })
-  }
-
-  handleOriginalRulesChange(event) {
-    this.setState({
-      original_rules: event.target.value
-    })
-  }
-
-  handleAlternateRulesChange(event) {
-    this.setState({
-      alternate_rules: event.target.value
-    })
-  }
-
-  handleSubmit = (event) => {
+  handleSubmit = (endpoint) => {
+    return (event) => {
     event.preventDefault();
     this.setState({
       title: event.target.value,
@@ -84,7 +55,7 @@ export default class GameForm extends Component {
         alternate_rules: ''
       })
       console.log("GAMEFORM THIS.PROPS: ",this.props);
-      this.props.history.push('/games');
+      this.props.history.push(endpoint);
     } else {
       console.log("na ah ah, you didnt say the magic word");
       this.setState({
@@ -95,14 +66,14 @@ export default class GameForm extends Component {
         alternate_rules: ''
       })
     }
-
+    }
   }
 
   render() {
     return (
       <div className="gameForm" onLoad={this.props.navToggle}>
           <div className="form-group">
-            <input className="form-control" onChange={this.handleTitleChange} placeholder="Game title" required autoFocus/>
+            <input className="form-control" onChange={this.handleUpdateState('title')} value={this.state.title} placeholder="Game title" required autoFocus/>
           </div>
           <fieldset className="form-group">
            <legend>Game Category</legend>
@@ -111,7 +82,7 @@ export default class GameForm extends Component {
 
              <div className="form-check">
                <label className="form-check-label">
-                 <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios1" value="card" checked={this.state.category === 'card'} onChange={this.handleCategoryChange} />
+                 <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios1" value="card" checked={this.state.category === 'card'} onChange={this.handleUpdateState('category')} />
                   Card
                </label>
                <div className="check"><div className="inside"></div></div>
@@ -120,7 +91,7 @@ export default class GameForm extends Component {
              <div className="form-check">
              <label className="form-check-label">
                  <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios2" value="board"
-                 checked={this.state.category === 'board'} onChange={this.handleCategoryChange} />
+                 checked={this.state.category === 'board'} onChange={this.handleUpdateState('category')} />
                   Board
                </label>
                <div className="check"><div className="inside"></div></div>
@@ -129,7 +100,7 @@ export default class GameForm extends Component {
              <div className="form-check">
              <label className="form-check-label">
                  <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios3" value="dice"
-                 checked={this.state.category === 'dice'} onChange={this.handleCategoryChange} />
+                 checked={this.state.category === 'dice'} onChange={this.handleUpdateState('category')} />
                   Dice
                </label>
                <div className="check"><div className="inside"></div></div>
@@ -137,7 +108,7 @@ export default class GameForm extends Component {
 
              <div className="form-check">
              <label className="form-check-label">
-                 <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios3" value="recreational sports" checked={this.state.category === 'recreational sports'} onChange={this.handleCategoryChange} />
+                 <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios3" value="recreational sports" checked={this.state.category === 'recreational sports'} onChange={this.handleUpdateState('category')} />
                   Recreational Sports
                </label>
                <div className="check"><div className="inside"></div></div>
@@ -146,16 +117,18 @@ export default class GameForm extends Component {
            </div>
          </fieldset>
           <div className="form-group">
-            <input className="form-control" onChange={this.handleObjectiveChange} placeholder="Game Objective" required/>
+            <input className="form-control" onChange={this.handleUpdateState('objective')} value={this.state.objective} placeholder="Game Objective" required/>
           </div>
           <div className="form-group">
-            <textarea className="form-control" onChange={this.handleOriginalRulesChange} placeholder="Normal Rules" required></textarea>
+            <textarea className="form-control" onChange={this.handleUpdateState('original_rules')} value={this.state.original_rules} placeholder="Normal Rules" required></textarea>
           </div>
           <div className="form-group">
-            <textarea className="form-control" onChange={this.handleAlternateRulesChange} placeholder="House Rules" required></textarea>
+            <textarea className="form-control" onChange={this.handleUpdateState('alternate_rules')} value={this.state.alternate_rules} placeholder="House Rules" required></textarea>
           </div>
-          <button className="btn" onClick={this.handleSubmit}>Submit</button>
-
+          <div className="form_submits">
+            <button className="btn" onClick={this.handleSubmit('/games')}>Submit</button>
+            <p className="another_game_link" onClick={this.handleSubmit('/newGame')}>or submit and add another game</p>
+          </div>
       </div>
     )
   }
