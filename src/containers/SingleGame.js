@@ -8,6 +8,7 @@ export default class SingleGame extends Component {
       game: {}
     }
     this.arrowToggle = this.arrowToggle.bind(this);
+    this.handleDeleteGame = this.handleDeleteGame.bind(this);
   }
 
   arrowToggle() {
@@ -18,6 +19,11 @@ export default class SingleGame extends Component {
     } else {
       backArrow.className = "material-icons";
     }
+  }
+
+  handleDeleteGame = (gameId) => {
+    //change to delete fetch call
+    console.log("GAMEID: ",gameId);
   }
 
   componentDidMount() {
@@ -34,7 +40,7 @@ export default class SingleGame extends Component {
   }
 
   render() {
-
+    console.log(this.state.game);
     let game = this.state.game;
     let gameCategory = this.state.game.category;
     let gameIcon;
@@ -61,8 +67,8 @@ export default class SingleGame extends Component {
         <div className='card card-block'>
           <div className="title_block">
             <div>
-              <h3 className='card-title alert'>{game.title}</h3>
-              <p className='game_category alert'>{game.category}</p>
+              <h2 className='card-title alert'>{game.title}</h2>
+              {/*<p className='game_category alert'>{game.category}</p>*/}
             </div>
             <div className="arrow_container">
               <Link to='/games'>
@@ -73,7 +79,7 @@ export default class SingleGame extends Component {
 
           <div className='alert icon_bar'>
           <div>
-            <i className="material-icons group">{gameIcon}</i>
+            <i className="material-icons group" id={game.category}>{gameIcon}</i>
             <p>Category</p>
             <p>{game.category}</p>
           </div>
@@ -97,13 +103,20 @@ export default class SingleGame extends Component {
           </div>
 
           <div className='house_rules alert normal_rules'>
-            <p><span>The normal rules:</span><br/>{game.original_rules}</p>
+            <div>
+              <h4>The normal rules:</h4>
+              <p>{game.original_rules}</p>
+            </div>
             <button className='btn' data-toggle="collapse" data-target="#demo" onClick={this.arrowToggle}><i className="material-icons" id="myArrow">expand_more</i></button>
           </div>
 
-          <p id="demo" className="collapse alt_rules alert"><span>The house rules:</span><br/>{game.alternate_rules}</p>
+          <div id="demo" className="collapse alt_rules">
+            <h4 className="alert">The house rules:</h4>
+            <p>{game.alternate_rules}</p>
+          </div>
 
         </div>
+        <Link to="#" id="delete_button" className="btn" onClick={() => this.handleDeleteGame(`${game.id}`)}><i className="material-icons">delete</i></Link>
       </div>
     );
   }

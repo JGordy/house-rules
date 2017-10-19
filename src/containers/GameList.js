@@ -12,7 +12,7 @@ class GameList extends Component {
     }
   }
 
-// filtering game list data
+// setting the state of the filter based on an icon that is clicked
   handleFilterChange = (filter) => {
     this.setState({filter: filter});
   };
