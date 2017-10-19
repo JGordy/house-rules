@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
+import {loadTokenFromCookie, register} from "../actions/action";
+import {connect} from 'react-redux';
 
 class App extends Component {
   constructor(props) {
@@ -15,6 +17,13 @@ class App extends Component {
     // this.handleEmailChange = this.handleEmailChange.bind(this);
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  componentWillMount() {
+        const loadToken = this.props.loadToken;
+        loadToken();
+    }
+
+
   render() {
     return (
       <div className="App">
@@ -37,4 +46,14 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+    return {};
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        loadToken: () => dispatch(loadTokenFromCookie())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

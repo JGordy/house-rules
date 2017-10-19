@@ -7,9 +7,10 @@ class BaseLayout extends Component {
     super(props);
   //bind functions for navbar toggle and navigation here
   this.navToggle = this.navToggle.bind(this);
-  this.handleNaviagation = this.handleNaviagation.bind(this);
   }
 
+
+  // opens and closes the nav bar on click
   navToggle() {
       var navBar = document.getElementById("myNavBar");
       if (navBar.className === "topnav") {
@@ -19,11 +20,10 @@ class BaseLayout extends Component {
       }
   }
 
+  // this function handles the navigation and then calls the navToggle above to close the navbar
   handleNaviagation = (endpoint) => {
-    // console.log("BaseLayout THIS.PROPS.CHILDREN.PROPS.CHILDREN: ", this.props.);
     this.props.history.push(endpoint)
     this.navToggle();
-    // this.props.history.push(endpoint);
   }
 
   render () {

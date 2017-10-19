@@ -3,7 +3,7 @@ Signup / Login Page Styling
 ************************************/
 
 .App {
-  background: linear-gradient(to right, #ff7043, #c63f17 50%);
+  background-image: url('../images/gplaypattern.png');
   text-align: center;
   height: 90vh;
 }
@@ -21,7 +21,23 @@ Signup / Login Page Styling
 }
 
 .topnav {
-    background: linear-gradient(to right, #ff7043, #c63f17 50%);
+    /*background: linear-gradient(to right, #ff7043, #c63f17 50%);*/
+
+    /*background: linear-gradient(155deg, #ff7043 30%, #babfa1);*/
+
+    /*background: linear-gradient(155deg, #191c77 30%, #2cf );*/
+
+    /*favorite*/
+    background: linear-gradient(155deg, #02558b 30%, #2cf );
+
+    /*background: linear-gradient(155deg, #02558b 30%, #99ced4 );*/
+
+    /*background: linear-gradient(155deg, #02558b 30%, #6ec4db);*/
+
+    /*background: linear-gradient(155deg, #30415d 30%, #8eaebd);*/
+
+    /*background: linear-gradient(155deg, #0C7884 50%, #BABFA1);*/
+
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
@@ -103,8 +119,8 @@ Signup / Login Page Styling
   }
 
   div.form-group.login .btn, div.form-group.signup .btn{
-    background-color: white;
-    color: #ff7043;
+    background-color: #d7dd35;
+    color: white;
     margin-top: 0.5rem;
   }
 }
@@ -165,6 +181,7 @@ Signup / Login Page Styling
 ************************************/
 
   .GameList {
+    background-color: #fdfdff;
     padding-top: 0.7rem;
   }
 
@@ -175,7 +192,28 @@ Signup / Login Page Styling
   }
 
   .GameList .filter-bar a {
-    color: #ff7043;
+    /* neon green */
+    /*color: #29e00d;*/
+
+    /* lemon */
+    color: #d7dd35;
+
+    /* grass */
+    /*color: #8fc33a;*/
+
+    /* corn */
+    /*color: #e9c904;*/
+
+    /* crimson sky */
+    /*color: crimson;*/
+
+    /* coral */
+    /*color: #ff533d;*/
+
+    /*color: #575366;*/
+
+    /*color: #04D38A;*/
+
     flex-basis: 18%;
     text-align: center;
   }
@@ -229,7 +267,32 @@ Signup / Login Page Styling
 
   .game_initial {
     align-items: center;
-    background-color: #ff7043;
+        /**/
+    /*background-color: #ff7043;*/
+
+    /**/
+    /*background-color: #2cf;*/
+
+    /**/
+    /*background-color: #191c77;*/
+
+    /**/
+    /*background-color: #155765;*/
+
+    /* stormy */
+    /*background-color: #494e6b;*/
+
+    /* medium electric blue************ */
+    background-color: #02558b;
+
+    /* rain */
+    /*background-color: #6ec4db;*/
+
+    /* charcoal */
+    /*background-color: #3c3c3c;*/
+
+    /*background-color: #0C7884;*/
+
     border-radius: 50%;
     box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -245,12 +308,18 @@ Signup / Login Page Styling
   }
 
   .game_title {
-    color: gray;
+    /*color: #191c77;*/
+    color: #2cf;
+    /*color: #99ced4;*/
+    /*color: #3BFDB7;*/
+    /*color: #04D38A;*/
+    /*color: #d7dd35;*/
     margin-bottom: 0px;
   }
 
   .game_category {
     color: darkgray;
+    /*color: #d7dd35;*/
     font-style: italic;
     margin-bottom: 0px;
   }
@@ -329,6 +398,11 @@ Signup / Login Page Styling
     background-image: url('../images/gplaypattern.png');
   }
 
+  .title_block h2 {
+    /*color: #2cf;*/
+    color: #02558b;
+  }
+
   .title_block a {
     color: gray;
   }
@@ -360,7 +434,9 @@ Signup / Login Page Styling
   }
 
   .icon_bar i {
-    color: #ff7043;
+    /*color: #ff7043;*/
+    /*color: #29e00d;*/
+    color: #d7dd35;
     font-size: 32px;
     margin-right: 0rem;
     text-align: center;
@@ -387,7 +463,9 @@ Signup / Login Page Styling
 
   .game_objective {
     /*background: linear-gradient( #efefef, #fff,#efefef );*/
-    color: #ff7043;
+    /*color: #ff7043;*/
+    color: #2cf;
+    /*color: #02558b;*/
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -458,7 +536,8 @@ Signup / Login Page Styling
     box-shadow:
       inset 0px 11px 8px -10px #bbb,
       inset 0px -11px 8px -10px #bbb;
-    color: #ff7043;
+    /*color: #ff7043;*/
+    color: #2cf;
   }
 
   .alt_rules p {
@@ -476,10 +555,11 @@ Signup / Login Page Styling
 
   #delete_button {
     align-self: center;
-    background-color: #ff7043;
+    /*background-color: #ff7043;*/
+    background-color: #d7dd35;
     color: white;
     margin-top: 2rem;
-    width: 30%;
+    width: 20%;
   }
 
   /***********************************
@@ -493,67 +573,6 @@ Signup / Login Page Styling
     justify-content: space-around;
     height: 90vh;
   }
-/* test styling radio buttons */
-  /*.gameForm input[type=radio]{
-    position: absolute;
-    visibility: hidden;
-  }*/
-
-  /*.gameForm label{
-    display: block;
-    position: relative;
-    font-weight: 300;
-    font-size: 1.35em;
-    padding: 25px 25px 25px 80px;
-    margin: 10px auto;
-    height: 30px;
-    z-index: 9;
-    cursor: pointer;
-    -webkit-transition: all 0.25s linear;
-  }*/
-/*
-  .form-check .check{
-  display: block;
-  position: absolute;
-  border: 5px solid #AAAAAA;
-  border-radius: 100%;
-  height: 25px;
-  width: 25px;
-  top: 30px;
-  left: 20px;
-	z-index: 5;
-	transition: border .25s linear;
-	-webkit-transition: border .25s linear;
-}*/
-
-  /*.form-check .check::before {
-    display: block;
-    position: absolute;
-  	content: '';
-    border-radius: 100%;
-    height: 15px;
-    width: 15px;
-    top: 5px;
-  	left: 5px;
-    margin: auto;
-  	transition: background 0.25s linear;
-  	-webkit-transition: background 0.25s linear;
-  }*/
-
-  /*.form-check input[type=radio]:checked ~ .check {
-    border: 5px solid #0DFF92;
-  }
-
-  .form-check input[type=radio]:checked ~ .check::before{
-    background: #0DFF92;
-  }
-
-  .form-check input[type=radio]:checked ~ label{
-    color: #0DFF92;
-  }*/
-
-
-/* end test styling radio buttons */
 
   .form-group {
     padding-top: 1rem;
@@ -572,7 +591,8 @@ Signup / Login Page Styling
   }
 
   label {
-    color: #ff7043;
+    /*color: #ff7043;*/
+    color: #2cf;
   }
 
   .radio_buttons_cat {
@@ -585,7 +605,8 @@ Signup / Login Page Styling
   }
 
   .gameForm button {
-    background-color: #ff7043;
+    /*background-color: #ff7043;*/
+    background-color: #d7dd35;
     color: white;
     margin: 0rem auto;
     width: 40%;
@@ -596,13 +617,13 @@ Signup / Login Page Styling
   ************************************/
 
   .about-page {
-    background: linear-gradient(to right, #ff7043, #c63f17 50% );
+    background: #fdfdff;
     min-height: 90vh;
     padding-top: 1rem;
   }
 
   .about-page h2 {
-    color: white;
+    color: #d7dd35;
     padding-bottom: 1rem;
     text-align: center;
   }
@@ -612,8 +633,13 @@ Signup / Login Page Styling
   }
 
   .about-page a {
-    color: #ff7043;
+    /*color: #ff7043;*/
+    color: #2cf;
   }
+
+  /*.mb-0 a {
+    color: #d7dd35;
+  }*/
 
 
 }

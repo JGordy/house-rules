@@ -1,28 +1,50 @@
-import { GAME_SELECTED, SET_DATA } from '../actions/action';
+import { GAME_SELECTED, SET_DATA, SET_TOKEN, SET_ERROR, SET_USER } from '../actions/action';
 import update from 'immutability-helper';
 
+
 const initialState = {
+    token: null,
+    error: null,
     gamesList: [],
-    filter: 'all'
+    filter: 'all',
+    user: null
 }
 
-const reducer = function(state = initialState, action) {
-  switch (action.type) {
-    case GAME_SELECTED:
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
+        case SET_ERROR:
+            return update(state, {
+                error: {
+                    $set: action.payload
+                }
+            })
+        case SET_TOKEN:
+            return update(state, {
+                token: {
+                    $set: action.payload
+                }
+            });
+        case GAME_SELECTED:
+              return update(state, {
+                selectedGame: {
+                  $set: action.payload
+                }
+              })
+        case SET_DATA:
+            return update(state, {
+              gamesList: {
+                $set: action.payload
+              }
+            })
+        case SET_USER:
           return update(state, {
-            selectedGame: {
+            user: {
               $set: action.payload
             }
           })
-    case SET_DATA:
-        return update(state, {
-          gamesList: {
-            $set: action.payload
-          }
-        })
-    default:
-      return state;
-  }
+        default:
+            return state;
+    }
 }
 
 // const reducer = combineReducers({people: PeopleDataFilter, films: FilmsData, starships: StarshipsData, details: details});

@@ -22,8 +22,17 @@ export default class SingleGame extends Component {
   }
 
   handleDeleteGame = (gameId) => {
-    //change to delete fetch call
-    console.log("GAMEID: ",gameId);
+    fetch(`https://dry-forest-51238.herokuapp.com/api/game/${gameId}/delete`, {
+      method: "DELETE"
+    })
+    .then(response => {
+      console.log("Delete successful");
+    })
+    .catch(error => {
+      console.log("Failure to delete", error);
+    })
+
+    this.props.history.push('/games');
   }
 
   componentDidMount() {
@@ -40,7 +49,6 @@ export default class SingleGame extends Component {
   }
 
   render() {
-    console.log(this.state.game);
     let game = this.state.game;
     let gameCategory = this.state.game.category;
     let gameIcon;
