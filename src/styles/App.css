@@ -597,7 +597,13 @@ Signup / Login Page Styling
 
   .radio_buttons_cat {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin: 0rem auto;
+    width: 95%;
+  }
+
+  .players_radios {
+    font-size: 1.25rem;
   }
 
   textarea {

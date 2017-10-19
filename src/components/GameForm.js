@@ -8,7 +8,7 @@ export default class GameForm extends Component {
       category: 'card',
       objective: '',
       number_of_players: '1-2',
-      player_age_range: '',
+      player_age_range: 'under 7',
       original_rules: '',
       alternate_rules: ''
     }
@@ -85,6 +85,7 @@ export default class GameForm extends Component {
           <div className="form-group">
             <input className="form-control" onChange={this.handleUpdateState('title')} value={this.state.title} placeholder="Game title" required autoFocus/>
           </div>
+
           <fieldset className="form-group">
            <legend>Game Category</legend>
 
@@ -134,7 +135,7 @@ export default class GameForm extends Component {
 
           <div className="radio_buttons_cat">
 
-            <div className="form-check">
+            <div className="form-check players_radios">
               <label className="form-check-label">
                 <input type="radio" className="form-check-input" name="options2" id="optionsRadios5" value="1-2" checked={this.state.number_of_players === "1-2"} onChange={this.handleUpdateState('number_of_players')} />
                  1-2
@@ -142,16 +143,16 @@ export default class GameForm extends Component {
               <div className="check"><div className="inside"></div></div>
             </div>
 
-            <div className="form-check">
+            <div className="form-check players_radios">
             <label className="form-check-label">
-                <input type="radio" className="form-check-input" name="options2" id="optionsRadios6" value="3-4"
+                <input type="radio" className="form-check-input" name="options2" id="optionsRadio6" value="3-4"
                 checked={this.state.number_of_players === "3-4"} onChange={this.handleUpdateState('number_of_players')} />
                  3-4
               </label>
               <div className="check"><div className="inside"></div></div>
             </div>
 
-            <div className="form-check">
+            <div className="form-check players_radios">
             <label className="form-check-label">
                 <input type="radio" className="form-check-input" name="options2" id="optionsRadios7" value="5-6"
                 checked={this.state.number_of_players === "5-6"} onChange={this.handleUpdateState('number_of_players')} />
@@ -160,7 +161,7 @@ export default class GameForm extends Component {
               <div className="check"><div className="inside"></div></div>
             </div>
 
-            <div className="form-check">
+            <div className="form-check players_radios">
             <label className="form-check-label">
                 <input type="radio" className="form-check-input" name="options2" id="optionsRadios8" value="7+" checked={this.state.number_of_players === "7+"} onChange={this.handleUpdateState('number_of_players')} />
                  7+
@@ -171,7 +172,47 @@ export default class GameForm extends Component {
           </div>
         </fieldset>
 
+        <fieldset className="form-group">
+         <legend>Age Range</legend>
 
+         <div className="radio_buttons_cat">
+
+           <div className="form-check players_radios">
+             <label className="form-check-label">
+               <input type="radio" className="form-check-input" name="options3" id="optionsRadios9" value="under 7" checked={this.state.player_age_range === "under 7"} onChange={this.handleUpdateState('player_age_range')} />
+                under 7
+             </label>
+             <div className="check"><div className="inside"></div></div>
+           </div>
+
+           <div className="form-check players_radios">
+           <label className="form-check-label">
+               <input type="radio" className="form-check-input" name="options3" id="optionsRadios10" value="7-11"
+               checked={this.state.player_age_range === "7-11"} onChange={this.handleUpdateState('player_age_range')} />
+                7-11
+             </label>
+             <div className="check"><div className="inside"></div></div>
+           </div>
+
+           <div className="form-check players_radios">
+           <label className="form-check-label">
+               <input type="radio" className="form-check-input" name="options3" id="optionsRadios11" value="12-17"
+               checked={this.state.player_age_range === "12-17"} onChange={this.handleUpdateState('player_age_range')} />
+                12-17
+             </label>
+             <div className="check"><div className="inside"></div></div>
+           </div>
+
+           <div className="form-check players_radios">
+           <label className="form-check-label">
+               <input type="radio" className="form-check-input" name="options3" id="optionsRadios12" value="18+" checked={this.state.player_age_range === "18+"} onChange={this.handleUpdateState('player_age_range')} />
+                18+
+             </label>
+             <div className="check"><div className="inside"></div></div>
+           </div>
+
+         </div>
+       </fieldset>
 
 
 
