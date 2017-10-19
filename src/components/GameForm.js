@@ -116,6 +116,56 @@ export default class GameForm extends Component {
 
            </div>
          </fieldset>
+
+
+
+         <fieldset className="form-group">
+          <legend>Number of Players</legend>
+
+          <div className="radio_buttons_cat">
+
+            <div className="form-check">
+              <label className="form-check-label">
+                <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios1" value="1-2" checked={this.state.category === '1-2'} onChange={this.handleUpdateState('players')} />
+                 1-2
+              </label>
+              <div className="check"><div className="inside"></div></div>
+            </div>
+
+            <div className="form-check">
+            <label className="form-check-label">
+                <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios2" value="3-4"
+                checked={this.state.category === 'board'} onChange={this.handleUpdateState('3-4')} />
+                 3-4
+              </label>
+              <div className="check"><div className="inside"></div></div>
+            </div>
+
+            <div className="form-check">
+            <label className="form-check-label">
+                <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios3" value="5-6"
+                checked={this.state.category === '5-6'} onChange={this.handleUpdateState('category')} />
+                 5-6
+              </label>
+              <div className="check"><div className="inside"></div></div>
+            </div>
+
+            <div className="form-check">
+            <label className="form-check-label">
+                <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios3" value="7+" checked={this.state.category === '7+'} onChange={this.handleUpdateState('category')} />
+                 7+
+              </label>
+              <div className="check"><div className="inside"></div></div>
+            </div>
+
+          </div>
+        </fieldset>
+
+
+
+
+
+
           <div className="form-group">
             <input className="form-control" onChange={this.handleUpdateState('objective')} value={this.state.objective} placeholder="Game Objective" required/>
           </div>
