@@ -7,7 +7,7 @@ export default class GameForm extends Component {
       title: '',
       category: 'card',
       objective: '',
-      number_of_players: '',
+      number_of_players: '1-2',
       player_age_range: '',
       original_rules: '',
       alternate_rules: ''
@@ -37,7 +37,7 @@ export default class GameForm extends Component {
 
     if ((this.state.title !== "") &&
         (this.state.category !== "") &&
-        (this.state.objective !== "") && 
+        (this.state.objective !== "") &&
         (this.state.original_rules !== "") &&
         (this.state.alternate_rules !== "") &&
         (this.state.number_of_players !== "") &&
@@ -92,7 +92,7 @@ export default class GameForm extends Component {
 
              <div className="form-check">
                <label className="form-check-label">
-                 <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios1" value="card" checked={this.state.category === 'card'} onChange={this.handleUpdateState('category')} />
+                 <input type="radio" className="form-check-input" name="options1" id="optionsRadios1" value="card" checked={this.state.category === 'card'} onChange={this.handleUpdateState('category')} />
                   Card
                </label>
                <div className="check"><div className="inside"></div></div>
@@ -100,7 +100,7 @@ export default class GameForm extends Component {
 
              <div className="form-check">
              <label className="form-check-label">
-                 <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios2" value="board"
+                 <input type="radio" className="form-check-input" name="options1" id="optionsRadios2" value="board"
                  checked={this.state.category === 'board'} onChange={this.handleUpdateState('category')} />
                   Board
                </label>
@@ -109,7 +109,7 @@ export default class GameForm extends Component {
 
              <div className="form-check">
              <label className="form-check-label">
-                 <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios3" value="dice"
+                 <input type="radio" className="form-check-input" name="options1" id="optionsRadios3" value="dice"
                  checked={this.state.category === 'dice'} onChange={this.handleUpdateState('category')} />
                   Dice
                </label>
@@ -118,7 +118,7 @@ export default class GameForm extends Component {
 
              <div className="form-check">
              <label className="form-check-label">
-                 <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios3" value="recreational sports" checked={this.state.category === 'recreational sports'} onChange={this.handleUpdateState('category')} />
+                 <input type="radio" className="form-check-input" name="options1" id="optionsRadios4" value="recreational sports" checked={this.state.category === 'recreational sports'} onChange={this.handleUpdateState('category')} />
                   Recreational Sports
                </label>
                <div className="check"><div className="inside"></div></div>
@@ -136,7 +136,7 @@ export default class GameForm extends Component {
 
             <div className="form-check">
               <label className="form-check-label">
-                <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios1" value="1-2" checked={this.state.category === '1-2'} onChange={this.handleUpdateState('players')} />
+                <input type="radio" className="form-check-input" name="options2" id="optionsRadios5" value="1-2" checked={this.state.number_of_players === "1-2"} onChange={this.handleUpdateState('number_of_players')} />
                  1-2
               </label>
               <div className="check"><div className="inside"></div></div>
@@ -144,8 +144,8 @@ export default class GameForm extends Component {
 
             <div className="form-check">
             <label className="form-check-label">
-                <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios2" value="3-4"
-                checked={this.state.category === 'board'} onChange={this.handleUpdateState('3-4')} />
+                <input type="radio" className="form-check-input" name="options2" id="optionsRadios6" value="3-4"
+                checked={this.state.number_of_players === "3-4"} onChange={this.handleUpdateState('number_of_players')} />
                  3-4
               </label>
               <div className="check"><div className="inside"></div></div>
@@ -153,8 +153,8 @@ export default class GameForm extends Component {
 
             <div className="form-check">
             <label className="form-check-label">
-                <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios3" value="5-6"
-                checked={this.state.category === '5-6'} onChange={this.handleUpdateState('category')} />
+                <input type="radio" className="form-check-input" name="options2" id="optionsRadios7" value="5-6"
+                checked={this.state.number_of_players === "5-6"} onChange={this.handleUpdateState('number_of_players')} />
                  5-6
               </label>
               <div className="check"><div className="inside"></div></div>
@@ -162,7 +162,7 @@ export default class GameForm extends Component {
 
             <div className="form-check">
             <label className="form-check-label">
-                <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios3" value="7+" checked={this.state.category === '7+'} onChange={this.handleUpdateState('category')} />
+                <input type="radio" className="form-check-input" name="options2" id="optionsRadios8" value="7+" checked={this.state.number_of_players === "7+"} onChange={this.handleUpdateState('number_of_players')} />
                  7+
               </label>
               <div className="check"><div className="inside"></div></div>

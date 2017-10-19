@@ -9,7 +9,9 @@ class App extends Component {
     this.state = {
       username: '',
       password: '',
-      email: ''
+      email: '',
+      loginUsername: '',
+      loginPassword: ''
     }
   }
 
@@ -21,12 +23,14 @@ class App extends Component {
 
   handleRegister = (event) => {
     event.preventDefault();
-    const register = this.props.register;
+    // const register = this.props.register;
     register(this.state, () => {
       this.setState({
         email: "",
         username: "",
-        password: ""
+        password: "",
+        loginUsername: "",
+        loginPassword: ""
        })
      });
    }
@@ -35,8 +39,8 @@ class App extends Component {
   handleLogin = (event) => {
     event.preventDefault();
 
-    const login = this.props.login;
-    login(this.state.email, this.state.password, () => {
+    // const login = this.props.login;
+    login(this.state.loginUsername, this.state.loginPassword, () => {
       this.setState({
           email: "",
           password: ""
@@ -56,8 +60,8 @@ class App extends Component {
       <div className="App">
 
         <div className='form-group login'>
-          <input type='text' className="form-control" placeholder='Username' value={this.state.username} onChange={this.handleUpdateState('username')}/>
-          <input type='password' className="form-control" placeholder='Password' value={this.state.email} onChange={this.handleUpdateState('password')}/>
+          <input type='text' className="form-control" placeholder='Username' value={this.state.loginUsername} onChange={this.handleUpdateState('loginUsername')}/>
+          <input type='password' className="form-control" placeholder='Password' value={this.state.loginPassword} onChange={this.handleUpdateState('loginPassword')}/>
           <button className='btn' type='submit'onClick={this.handleLogin}>Log In</button>
         </div>
 
