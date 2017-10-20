@@ -12,11 +12,19 @@ class BaseLayout extends Component {
 
   // opens and closes the nav bar on click
   navToggle() {
-      var navBar = document.getElementById("myNavBar");
+      let navBar = document.getElementById("myNavBar");
+      let icon = document.getElementById("icon");
+
       if (navBar.className === "topnav") {
           navBar.className += " responsive";
       } else {
           navBar.className = "topnav";
+      }
+
+      if (icon.className === "icon") {
+        icon.className += " rotate";
+      } else {
+        icon.className = "icon";
       }
   }
 

@@ -60,8 +60,9 @@ class GameList extends Component {
     }
     return (
       <div className="GameList">
-        <h5 className="filter_header"> Filter Game Types</h5>
+
         <div className="filter-bar">
+          <h5 className="filter_header"> Filter Game Types</h5>
 
           <Link to="#" onClick={() => this.handleFilterChange('all')}>
           <i className="material-icons all_games_filter">dns</i>

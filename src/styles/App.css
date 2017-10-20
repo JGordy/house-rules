@@ -87,12 +87,13 @@ Signup / Login Page Styling
   .topnav .icon {
     color: white;
     opacity: 1;
-    height: 2rem;
+    height: 3rem;
     width: 3rem;
     float: right;
     display: block;
     text-align: center;
-    padding-top: .7rem;
+    padding: .7rem;
+    transition: transform 0.5s;
   }
 
   .topnav .GamesLink, .topnav .NewGameLink, .topnav .LogOutLink, .topnav .AboutLink {
@@ -176,19 +177,34 @@ Signup / Login Page Styling
     margin-top: 8px;
   }
 
+  .icon.rotate {
+    transform: rotate(90deg);
+    /* Safari */
+    -webkit-transform: rotate(90deg);
+    /* Firefox */
+    -moz-transform: rotate(90deg);
+    /* IE */
+    -ms-transform: rotate(90deg);
+    /* Opera */
+    -o-transform: rotate(90deg);
+
+    transition: transform 0.5s;
+  }
+
 /***********************************
   Mobile Game List Page Styling
 ************************************/
 
   .GameList {
     background-color: #fdfdff;
-    padding-top: 0.7rem;
   }
 
   .GameList .filter-bar {
-    color: #ff7043;
+    background-image: url('../images/gplaypattern.png');
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    padding-top: 0.7rem;
   }
 
   .GameList .filter-bar a {
@@ -221,6 +237,7 @@ Signup / Login Page Styling
   .filter_header {
     color: darkgray;
     font-size: 16px;
+    flex-basis: 100%;
     text-align: center;
   }
 
