@@ -61,6 +61,8 @@ export default class GameForm extends Component {
         title: '',
         category: 'card',
         objective: '',
+        number_of_players: '1-2',
+        player_age_range: 'under 7',
         original_rules: '',
         alternate_rules: ''
       })
@@ -187,18 +189,18 @@ export default class GameForm extends Component {
 
            <div className="form-check players_radios">
            <label className="form-check-label">
-               <input type="radio" className="form-check-input" name="options3" id="optionsRadios10" value="7-11"
-               checked={this.state.player_age_range === "7-11"} onChange={this.handleUpdateState('player_age_range')} />
-                7-11
+               <input type="radio" className="form-check-input" name="options3" id="optionsRadios10" value="7+"
+               checked={this.state.player_age_range === "7+"} onChange={this.handleUpdateState('player_age_range')} />
+                7+
              </label>
              <div className="check"><div className="inside"></div></div>
            </div>
 
            <div className="form-check players_radios">
            <label className="form-check-label">
-               <input type="radio" className="form-check-input" name="options3" id="optionsRadios11" value="12-17"
-               checked={this.state.player_age_range === "12-17"} onChange={this.handleUpdateState('player_age_range')} />
-                12-17
+               <input type="radio" className="form-check-input" name="options3" id="optionsRadios11" value="12+"
+               checked={this.state.player_age_range === "12+"} onChange={this.handleUpdateState('player_age_range')} />
+                12+
              </label>
              <div className="check"><div className="inside"></div></div>
            </div>
