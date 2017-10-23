@@ -677,6 +677,11 @@ Signup / Login Page Styling
     height: 100%;
   }
 
+  .about-page .card-header {
+    background-color: #fdfdff;
+    border: none;
+  }
+
   .about-page a {
     /*color: #ff7043;*/
     color: #2cf;

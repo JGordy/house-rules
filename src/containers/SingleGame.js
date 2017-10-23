@@ -22,19 +22,20 @@ export default class SingleGame extends Component {
     }
   }
 
+
   handleDeleteGame = (gameId) => {
     fetch(`https://house-rules-jgwrbs.herokuapp.com/api/game/${gameId}/delete`, {
       method: "DELETE"
     })
     .then(response => {
-      console.log("Delete successful");
+      console.log("DELETE SUCCESSFUL: ", response);
     })
     .catch(error => {
-      console.log("Failure to delete", error);
+      console.log("Failure to delete: ", error);
     })
-
     this.props.history.push('/games');
   }
+
 
   componentDidMount() {
     let match = this.props.match;
