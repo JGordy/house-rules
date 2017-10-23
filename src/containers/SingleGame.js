@@ -127,18 +127,20 @@ export default class SingleGame extends Component {
 
           <div className='house_rules alert normal_rules'>
             <div>
-              <h4>The normal rules:</h4>
+              <h4>Traditional rules</h4>
               <a className="alt_games_link" href="#altGamesList">...how about a different spin on the game?</a>
-              <p>{game.rules}</p>
             </div>
-            <button className='btn' data-toggle="collapse" data-target="#demo" onClick={this.arrowToggle}><i className="material-icons" id="myArrow">add</i></button>
+            <button className='btn' data-toggle="collapse" data-target="#demo" onClick={this.arrowToggle}>Add game<i className="material-icons" id="myArrow">add</i></button>
           </div>
+
+          <p id="game_rules">{game.rules}</p>
 
           <div id="demo" className="collapse alt_rules">
             <AddAlternate game={this.state.game} history={this.props.history} />
           </div>
 
           <div id="altGamesList">
+            <h3 className="alt_list_header">House Rules</h3>
             {alternatesList}
           </div>
 

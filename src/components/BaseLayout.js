@@ -11,17 +11,19 @@ class BaseLayout extends Component {
 
 
   // opens and closes the nav bar on click
-  navToggle() {
+  navToggle(endpoint) {
       let navBar = document.getElementById("myNavBar");
       let icon = document.getElementById("icon");
 
-      if (navBar.className === "topnav") {
+      if ((navBar.className === "topnav") &&
+          (endpoint !== "/")) {
           navBar.className += " responsive";
       } else {
           navBar.className = "topnav";
       }
 
-      if (icon.className === "icon") {
+      if ((icon.className === "icon") &&
+          (endpoint !== "/")) {
         icon.className += " rotate";
       } else {
         icon.className = "icon";
@@ -31,7 +33,7 @@ class BaseLayout extends Component {
   // this function handles the navigation and then calls the navToggle above to close the navbar
   handleNaviagation = (endpoint) => {
     this.props.history.push(endpoint)
-    this.navToggle();
+    this.navToggle(endpoint);
   }
 
   render () {

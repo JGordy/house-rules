@@ -551,35 +551,72 @@ Signup / Login Page Styling
     min-height: 8rem;
   }
 
+  #game_rules {
+    color: gray;
+    margin: 0rem auto 2rem;
+    width: 90%;
+  }
+
   .alt_rules {
-    /*background-color: #ffbb93;
-    border: 2px solid #c63f17;*/
-
-    /*background-color: #fff;*/
-
-    /*background-image: url('../images/gplaypattern.png');*/
-
-    /*background: linear-gradient( #efefef, #fff,#efefef );*/
-
     border-radius: 0px;
     box-shadow:
       inset 0px 11px 8px -10px #bbb,
       inset 0px -11px 8px -10px #bbb;
-    /*color: #ff7043;*/
     color: #2cf;
-  }
-
-  .alt_rules p {
-    margin: 1rem auto;
-    width: 90%;
   }
 
   .alert h4 {
     font-size: 1.7rem;
+    text-transform: capitalize;
   }
 
   .alert {
     margin-bottom: 0rem;
+  }
+
+  .alt_games_link, .alt_games_link:visited {
+    color: #2cf;
+  }
+
+  #altGamesList {
+    padding-top: 1rem;
+  }
+
+  .alt_list_header {
+    color: gray;
+    padding: 1rem;
+  }
+
+  .each_alternate {
+    align-items: center;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    margin: 0px auto 0.7rem auto;
+    min-height: 7rem;
+    padding: 10px;
+    padding-left: 0px;
+    width: 100%;
+  }
+
+  .each_alternate .alternate_initial {
+    background-color: #d7dd35;
+    border-radius: 50%;
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 2rem;
+    padding: 0.8rem 1.5rem 1rem;
+    margin: 0rem 2rem 0rem 1rem;
+    text-transform: lowercase;
+  }
+
+  .each_alternate .alternate_title {
+    color: #2cf;
+  }
+
+  .each_alternate .alternate_objective, .each_alternate .alternate_rules {
+    color: gray;
   }
 
   #delete_button {
@@ -657,44 +694,6 @@ Signup / Login Page Styling
     color: #2cf;
   }
 
-  #altGamesList {
-    padding-top: 1rem;
-  }
-
-  .each_alternate {
-    align-items: center;
-    border: none;
-    border-radius: 3px;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-    display: flex;
-    margin: 0px auto 0.7rem auto;
-    height: 7rem;
-    padding: 10px;
-    padding-left: 0px;
-    width: 100%;
-  }
-
-  .each_alternate .alternate_initial {
-    background-color: #d7dd35;
-    border-radius: 50%;
-    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.3);
-    color: white;
-    font-size: 2rem;
-    padding: 0.8rem 1.5rem 1rem;
-    margin: 0rem 2rem 0rem 1rem;
-    text-transform: lowercase;
-  }
-
-  .each_alternate .alternate_title {
-    color: #2cf;
-  }
-
-  .each_alternate .alternate_objective, .each_alternate .alternate_rules {
-    color: darkgray;
-  }
-
-
-
   /***********************************
      Mobile About Page Styling
   ************************************/
@@ -731,7 +730,7 @@ Signup / Login Page Styling
 
   .alternateForm {
     background-color: #02558b;
-    padding: 1rem;
+    padding: 2rem 1rem;
   }
 
   .alternateForm h4 {
@@ -742,7 +741,7 @@ Signup / Login Page Styling
   .alternateForm input {
     /*border: none;
     border-bottom: 2px solid #2cf;*/
-    margin: 0rem auto 1rem;
+    margin: 1.5rem auto;
     width: 90%;
   }
 
