@@ -5,7 +5,8 @@ export default class SingleGame extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      game: {}
+      game: {},
+      alternates: []
     }
     this.arrowToggle = this.arrowToggle.bind(this);
     this.handleDeleteGame = this.handleDeleteGame.bind(this);
@@ -22,7 +23,7 @@ export default class SingleGame extends Component {
   }
 
   handleDeleteGame = (gameId) => {
-    fetch(`https://dry-forest-51238.herokuapp.com/api/game/${gameId}/delete`, {
+    fetch(`https://house-rules-jgwrbs.herokuapp.com/api/game/${gameId}/delete`, {
       method: "DELETE"
     })
     .then(response => {
@@ -38,17 +39,20 @@ export default class SingleGame extends Component {
   componentDidMount() {
     let match = this.props.match;
     const id = match.params.id;
-    const URL = `https://dry-forest-51238.herokuapp.com/api/game/${id}`;
+    const URL = `https://house-rules-jgwrbs.herokuapp.com/api/game/${id}`;
     fetch(URL)
     .then(response => {
       return response.json()
     })
     .then(data => {
-      this.setState({game: data})
+      console.log("SingleGame data: ", data);
+      this.setState({game: data, alternates: data.alternates})
     })
   }
 
   render() {
+    console.log("THIS.STATE.GAME.ALTERNATES: ", this.state.game.alternates
+);
     let game = this.state.game;
     let gameCategory = this.state.game.category;
     let gameIcon;
@@ -69,6 +73,16 @@ export default class SingleGame extends Component {
       default:
         gameIcon = "widgets"
     }
+
+    let alternatesList = this.state.alternates.map((game) => {
+      return (
+        <div key={game.id}>
+          <h4>{game.title}</h4>
+          <h5>{game.objective}</h5>
+          <p>{game.rules}</p>
+        </div>
+      )
+    })
 
     return (
       <div className="singleGame">
@@ -94,14 +108,12 @@ export default class SingleGame extends Component {
             <div>
               <i className="material-icons group">group</i>
               <p>Players</p>
-              {/* Grab number of players from new api data once deployed */}
-              <p className=''>2-5</p>
+              <p className=''>{game.numberOfPlayers}</p>
             </div>
             <div>
               <i className="material-icons face">face</i>
               <p>Ages</p>
-              {/* Grab Players age Range from new api data once deployed */}
-              <p className=''>13+</p>
+              <p className=''>{game.playerAgeRange}</p>
             </div>
           </div>
 
@@ -113,14 +125,17 @@ export default class SingleGame extends Component {
           <div className='house_rules alert normal_rules'>
             <div>
               <h4>The normal rules:</h4>
-              <p>{game.original_rules}</p>
+              <p>{game.rules}</p>
             </div>
-            <button className='btn' data-toggle="collapse" data-target="#demo" onClick={this.arrowToggle}><i className="material-icons" id="myArrow">expand_more</i></button>
+            <button className='btn' data-toggle="collapse" data-target="#demo" onClick={this.arrowToggle}><i className="material-icons" id="myArrow">add</i></button>
           </div>
 
           <div id="demo" className="collapse alt_rules">
-            <h4 className="alert">The house rules:</h4>
-            <p>{game.alternate_rules}</p>
+            <h4 className="alert">Add a form here later to add house rules variations</h4>
+          </div>
+
+          <div>
+            {alternatesList}
           </div>
 
         </div>

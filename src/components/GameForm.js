@@ -27,10 +27,9 @@ export default class GameForm extends Component {
       title: event.target.value,
       category: event.target.value,
       objective: event.target.value,
-      number_of_players: event.target.value,
-      player_age_range: event.target.value,
-      original_rules: event.target.value,
-      alternate_rules: event.target.value
+      numberOfPlayers: event.target.value,
+      playerAgeRange: event.target.value,
+      rules: event.target.value
     })
     let gameItem = JSON.stringify(this.state);
     console.log("THIS.STATE", this.state);
@@ -38,12 +37,11 @@ export default class GameForm extends Component {
     if ((this.state.title !== "") &&
         (this.state.category !== "") &&
         (this.state.objective !== "") &&
-        (this.state.original_rules !== "") &&
-        (this.state.alternate_rules !== "") &&
-        (this.state.number_of_players !== "") &&
-        (this.state.player_age_range !== "")) {
+        (this.state.rules !== "") &&
+        (this.state.numberOfPlayers !== "") &&
+        (this.state.playerAgeRange !== "")) {
       console.log(this.state);
-      fetch("https://dry-forest-51238.herokuapp.com/api/game/new",
+      fetch("https://house-rules-jgwrbs.herokuapp.com/api/game/new",
         {
           method: "POST",
           body: gameItem,
@@ -61,10 +59,9 @@ export default class GameForm extends Component {
         title: '',
         category: 'card',
         objective: '',
-        number_of_players: '1-2',
-        player_age_range: 'under 7',
-        original_rules: '',
-        alternate_rules: ''
+        numberOfPlayers: '1-2',
+        playerAgeRange: 'under 7',
+        rules: ''
       })
       console.log("GAMEFORM THIS.PROPS: ",this.props);
       this.props.history.push(endpoint);
@@ -75,7 +72,8 @@ export default class GameForm extends Component {
         category: 'card',
         objective: '',
         original_rules: '',
-        alternate_rules: ''
+        numberOfPlayers: '1-2',
+        playerAgeRange: 'unO'
       })
     }
     }
@@ -139,7 +137,7 @@ export default class GameForm extends Component {
 
             <div className="form-check players_radios">
               <label className="form-check-label">
-                <input type="radio" className="form-check-input" name="options2" id="optionsRadios5" value="1-2" checked={this.state.number_of_players === "1-2"} onChange={this.handleUpdateState('number_of_players')} />
+                <input type="radio" className="form-check-input" name="options2" id="optionsRadios5" value="1-2" checked={this.state.numberOfPlayers === "1-2"} onChange={this.handleUpdateState('numberOfPlayers')} />
                  1-2
               </label>
               <div className="check"><div className="inside"></div></div>
@@ -148,7 +146,7 @@ export default class GameForm extends Component {
             <div className="form-check players_radios">
             <label className="form-check-label">
                 <input type="radio" className="form-check-input" name="options2" id="optionsRadio6" value="3-4"
-                checked={this.state.number_of_players === "3-4"} onChange={this.handleUpdateState('number_of_players')} />
+                checked={this.state.numberOfPlayers === "3-4"} onChange={this.handleUpdateState('numberOfPlayers')} />
                  3-4
               </label>
               <div className="check"><div className="inside"></div></div>
@@ -157,7 +155,7 @@ export default class GameForm extends Component {
             <div className="form-check players_radios">
             <label className="form-check-label">
                 <input type="radio" className="form-check-input" name="options2" id="optionsRadios7" value="5-6"
-                checked={this.state.number_of_players === "5-6"} onChange={this.handleUpdateState('number_of_players')} />
+                checked={this.state.numberOfPlayers === "5-6"} onChange={this.handleUpdateState('numberOfPlayers')} />
                  5-6
               </label>
               <div className="check"><div className="inside"></div></div>
@@ -165,7 +163,7 @@ export default class GameForm extends Component {
 
             <div className="form-check players_radios">
             <label className="form-check-label">
-                <input type="radio" className="form-check-input" name="options2" id="optionsRadios8" value="7+" checked={this.state.number_of_players === "7+"} onChange={this.handleUpdateState('number_of_players')} />
+                <input type="radio" className="form-check-input" name="options2" id="optionsRadios8" value="7+" checked={this.state.numberOfPlayers === "7+"} onChange={this.handleUpdateState('numberOfPlayers')} />
                  7+
               </label>
               <div className="check"><div className="inside"></div></div>
@@ -181,7 +179,7 @@ export default class GameForm extends Component {
 
            <div className="form-check players_radios">
              <label className="form-check-label">
-               <input type="radio" className="form-check-input" name="options3" id="optionsRadios9" value="under 7" checked={this.state.player_age_range === "under 7"} onChange={this.handleUpdateState('player_age_range')} />
+               <input type="radio" className="form-check-input" name="options3" id="optionsRadios9" value="under 7" checked={this.state.playerAgeRange === "under 7"} onChange={this.handleUpdateState('playerAgeRange')} />
                 under 7
              </label>
              <div className="check"><div className="inside"></div></div>
@@ -190,7 +188,7 @@ export default class GameForm extends Component {
            <div className="form-check players_radios">
            <label className="form-check-label">
                <input type="radio" className="form-check-input" name="options3" id="optionsRadios10" value="7+"
-               checked={this.state.player_age_range === "7+"} onChange={this.handleUpdateState('player_age_range')} />
+               checked={this.state.playerAgeRange === "7+"} onChange={this.handleUpdateState('playerAgeRange')} />
                 7+
              </label>
              <div className="check"><div className="inside"></div></div>
@@ -199,7 +197,7 @@ export default class GameForm extends Component {
            <div className="form-check players_radios">
            <label className="form-check-label">
                <input type="radio" className="form-check-input" name="options3" id="optionsRadios11" value="12+"
-               checked={this.state.player_age_range === "12+"} onChange={this.handleUpdateState('player_age_range')} />
+               checked={this.state.playerAgeRange === "12+"} onChange={this.handleUpdateState('playerAgeRange')} />
                 12+
              </label>
              <div className="check"><div className="inside"></div></div>
@@ -207,7 +205,7 @@ export default class GameForm extends Component {
 
            <div className="form-check players_radios">
            <label className="form-check-label">
-               <input type="radio" className="form-check-input" name="options3" id="optionsRadios12" value="18+" checked={this.state.player_age_range === "18+"} onChange={this.handleUpdateState('player_age_range')} />
+               <input type="radio" className="form-check-input" name="options3" id="optionsRadios12" value="18+" checked={this.state.playerAgeRange === "18+"} onChange={this.handleUpdateState('playerAgeRange')} />
                 18+
              </label>
              <div className="check"><div className="inside"></div></div>
@@ -223,10 +221,7 @@ export default class GameForm extends Component {
             <input className="form-control" onChange={this.handleUpdateState('objective')} value={this.state.objective} placeholder="Game Objective" required/>
           </div>
           <div className="form-group">
-            <textarea className="form-control" onChange={this.handleUpdateState('original_rules')} value={this.state.original_rules} placeholder="Normal Rules" required></textarea>
-          </div>
-          <div className="form-group">
-            <textarea className="form-control" onChange={this.handleUpdateState('alternate_rules')} value={this.state.alternate_rules} placeholder="House Rules" required></textarea>
+            <textarea className="form-control" onChange={this.handleUpdateState('rules')} value={this.state.rules} placeholder="Normal Rules" required></textarea>
           </div>
           <div className="form_submits">
             <button className="btn" onClick={this.handleSubmit('/games')}>Submit</button>

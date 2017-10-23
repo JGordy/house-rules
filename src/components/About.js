@@ -10,14 +10,14 @@ export default class About extends Component {
 
 
         <div id="accordion" role="tablist" aria-multiselectable="true">
-  <div className="card">
-    <div className="card-header" role="tab" id="headingOne">
-      <h5 className="mb-0">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          House Rules Wikipedia
-        </a>
-      </h5>
-    </div>
+        <div className="card">
+          <div className="card-header" role="tab" id="headingOne">
+            <h5 className="mb-0">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                House Rules Wikipedia
+              </a>
+            </h5>
+          </div>
 
     <div id="collapseOne" className="collapse show" role="tabpanel" aria-labelledby="headingOne">
       <div className="card-block">

@@ -68,6 +68,7 @@ Signup / Login Page Styling
 
 .material-icons {
   margin-right: 10px;
+  transition: transform 0.5s;
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
@@ -341,6 +342,17 @@ Signup / Login Page Styling
     margin-bottom: 0px;
   }
 
+ .material-icons.md-36.FAB {
+   background-color: #d7dd35;
+   border-radius: 50%;
+   box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.2);
+   color: white;
+   padding: 0.75rem;
+   position: fixed;
+   bottom: 1rem;
+   right: 1rem;
+ }
+
   @keyframes slideInFromLeft {
     0% {
       /*display: block;*/
@@ -515,15 +527,15 @@ Signup / Login Page Styling
   }
 
   .material-icons.rotate {
-    transform: rotate(180deg);
+    transform: rotate(135deg);
     /* Safari */
-    -webkit-transform: rotate(180deg);
+    -webkit-transform: rotate(135deg);
     /* Firefox */
-    -moz-transform: rotate(180deg);
+    -moz-transform: rotate(135deg);
     /* IE */
-    -ms-transform: rotate(180deg);
+    -ms-transform: rotate(135deg);
     /* Opera */
-    -o-transform: rotate(180deg);
+    -o-transform: rotate(135deg);
 
     transition: transform 0.5s;
     }

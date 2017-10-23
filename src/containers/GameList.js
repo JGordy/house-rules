@@ -91,6 +91,11 @@ class GameList extends Component {
 
         </div>
         {gamesList}
+        <div>
+          <Link to='/newGame'>
+            <i className="material-icons md-36 FAB">add</i>
+          </Link>
+        </div>
       </div>
     );
   }
