@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import AddAlternate from '../components/AddAlternate';
 
 export default class SingleGame extends Component {
   constructor(props) {
@@ -16,7 +17,6 @@ export default class SingleGame extends Component {
     var backArrow = document.getElementById('myArrow');
     if (backArrow.className === "material-icons") {
       backArrow.className += " rotate";
-      this.props.history.push('#demo');
     } else {
       backArrow.className = "material-icons";
     }
@@ -52,8 +52,8 @@ export default class SingleGame extends Component {
   }
 
   render() {
-    console.log("THIS.STATE.GAME.ALTERNATES: ", this.state.game.alternates
-);
+    console.log("THIS.STATE.GAME.ALTERNATES: ", this.state.game.alternates);
+    console.log("THIS.PROPS: ", this.props.history);
     let game = this.state.game;
     let gameCategory = this.state.game.category;
     let gameIcon;
@@ -132,7 +132,8 @@ export default class SingleGame extends Component {
           </div>
 
           <div id="demo" className="collapse alt_rules">
-            <h4 className="alert">Add a form here later to add house rules variations</h4>
+            {/*<h4 className="alert">Add a form here later to add house rules variations</h4>*/}
+            <AddAlternate game={this.state.game} history={this.props.history} />
           </div>
 
           <div>

@@ -72,7 +72,7 @@ export default class GameForm extends Component {
         objective: '',
         rules: '',
         numberOfPlayers: '1-2',
-        playerAgeRange: 'unO'
+        playerAgeRange: 'under 7'
       })
     }
     }
