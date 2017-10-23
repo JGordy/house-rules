@@ -7,10 +7,9 @@ export default class GameForm extends Component {
       title: '',
       category: 'card',
       objective: '',
-      number_of_players: '1-2',
-      player_age_range: 'under 7',
-      original_rules: '',
-      alternate_rules: ''
+      numberOfPlayers: '1-2',
+      playerAgeRange: 'under 7',
+      rules: ''
     }
   }
 
@@ -40,7 +39,7 @@ export default class GameForm extends Component {
         (this.state.rules !== "") &&
         (this.state.numberOfPlayers !== "") &&
         (this.state.playerAgeRange !== "")) {
-      console.log(this.state);
+      console.log("gameItem: ", gameItem);
       fetch("https://house-rules-jgwrbs.herokuapp.com/api/game/new",
         {
           method: "POST",
@@ -71,7 +70,7 @@ export default class GameForm extends Component {
         title: '',
         category: 'card',
         objective: '',
-        original_rules: '',
+        rules: '',
         numberOfPlayers: '1-2',
         playerAgeRange: 'unO'
       })
