@@ -24,14 +24,9 @@ class GameList extends Component {
 
   render () {
     // map over game data array
-    // TODO leaving these logs for the real api.
-    // console.log('THIS.STATE.GAMES: ', this.state.games);
-    // console.log('THIS.PROPS.gamesList:', this.props.gamesList);
     let gamesList;
-
     if (this.state.filter === 'all') {
       gamesList = this.props.gamesList.map((game) => {
-        // console.log("GAMESLIST GAMES: ", game);
         return <div key={game.id} className="each_game card-block card">
                   <Link to={`/games/${game.id}`}>
                     <div className="game_initial"><h3>{game.title[0]}</h3></div>

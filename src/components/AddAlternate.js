@@ -64,7 +64,7 @@ export default class AddAlternate extends Component {
     return (
       <div className="alternateForm">
 
-        <h4>Add your favorite game variant</h4>
+        <h4>Add your favorite house rules</h4>
 
         <div>
           <input className="form-control" onChange={this.handleUpdateState('title')} value={this.state.title} placeholder="Game title" required autoFocus/>
@@ -79,7 +79,7 @@ export default class AddAlternate extends Component {
         </div>
 
         <div className="form_submits">
-          <button className="btn" onClick={this.handleSubmit(`/games/${this.props.game.id}`)}>Submit House Rules</button>
+          <button className="btn" onClick={this.handleSubmit(`/games/${this.props.game.id}`)}>Submit</button>
         </div>
 
       </div>

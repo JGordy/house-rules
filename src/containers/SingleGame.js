@@ -46,14 +46,11 @@ export default class SingleGame extends Component {
       return response.json()
     })
     .then(data => {
-      console.log("SingleGame data: ", data);
       this.setState({game: data, alternates: data.alternates})
     })
   }
 
   render() {
-    console.log("THIS.STATE.GAME.ALTERNATES: ", this.state.game.alternates);
-    console.log("THIS.PROPS: ", this.props.history);
     let game = this.state.game;
     let gameCategory = this.state.game.category;
     let gameIcon;
@@ -77,10 +74,15 @@ export default class SingleGame extends Component {
 
     let alternatesList = this.state.alternates.map((game) => {
       return (
-        <div key={game.id}>
-          <h4>{game.title}</h4>
-          <h5>{game.objective}</h5>
-          <p>{game.rules}</p>
+        <div className="each_alternate card-block" key={game.id}>
+          <div>
+            <h3 className="alternate_initial">{game.title[0]}</h3>
+          </div>
+          <div>
+            <h4 className="alternate_title">{game.title}</h4>
+            <h5 className="alternate_objective">{game.objective}</h5>
+            <p className="alternate_rules">{game.rules}</p>
+          </div>
         </div>
       )
     })
@@ -126,17 +128,17 @@ export default class SingleGame extends Component {
           <div className='house_rules alert normal_rules'>
             <div>
               <h4>The normal rules:</h4>
+              <a className="alt_games_link" href="#altGamesList">...how about a different spin on the game?</a>
               <p>{game.rules}</p>
             </div>
             <button className='btn' data-toggle="collapse" data-target="#demo" onClick={this.arrowToggle}><i className="material-icons" id="myArrow">add</i></button>
           </div>
 
           <div id="demo" className="collapse alt_rules">
-            {/*<h4 className="alert">Add a form here later to add house rules variations</h4>*/}
             <AddAlternate game={this.state.game} history={this.props.history} />
           </div>
 
-          <div>
+          <div id="altGamesList">
             {alternatesList}
           </div>
 

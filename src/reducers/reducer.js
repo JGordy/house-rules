@@ -7,7 +7,8 @@ const initialState = {
     error: null,
     gamesList: [],
     filter: 'all',
-    user: null
+    user: null,
+    selectedGame: ''
 }
 
 const reducer = (state = initialState, action) => {

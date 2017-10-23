@@ -112,21 +112,7 @@ export function setUser(payload) {
 }
 
 
-// calling the api action
-// export const getGameList = () => {
-//   return(dispatch, getState) => {
-//     fetch('https://dry-forest-51238.herokuapp.com/api/games')
-//     .then(response => {
-//       return response.json()
-//     })
-//     .then(data => {
-//       // console.log("DATA: ",data);
-//       dispatch(setData(data));
-//     })
-//   }
-// }
-
-
+// calling the api for the entire gamelist
 export const getGameList = () => {
   return(dispatch, getState) => {
     fetch('https://house-rules-jgwrbs.herokuapp.com/api/games')
