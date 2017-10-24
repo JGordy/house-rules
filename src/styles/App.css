@@ -21,23 +21,7 @@ Signup / Login Page Styling
 }
 
 .topnav {
-    /*background: linear-gradient(to right, #ff7043, #c63f17 50%);*/
-
-    /*background: linear-gradient(155deg, #ff7043 30%, #babfa1);*/
-
-    /*background: linear-gradient(155deg, #191c77 30%, #2cf );*/
-
-    /*favorite*/
     background: linear-gradient(155deg, #02558b 30%, #2cf );
-
-    /*background: linear-gradient(155deg, #02558b 30%, #99ced4 );*/
-
-    /*background: linear-gradient(155deg, #02558b 30%, #6ec4db);*/
-
-    /*background: linear-gradient(155deg, #30415d 30%, #8eaebd);*/
-
-    /*background: linear-gradient(155deg, #0C7884 50%, #BABFA1);*/
-
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
@@ -72,7 +56,7 @@ Signup / Login Page Styling
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 
   .topnav {
     height: 55px;
@@ -128,7 +112,7 @@ Signup / Login Page Styling
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .topnav.responsive {
     position: relative;
     height: 193px;
@@ -209,28 +193,7 @@ Signup / Login Page Styling
   }
 
   .GameList .filter-bar a {
-    /* neon green */
-    /*color: #29e00d;*/
-
-    /* lemon */
-    color: #d7dd35;
-
-    /* grass */
-    /*color: #8fc33a;*/
-
-    /* corn */
-    /*color: #e9c904;*/
-
-    /* crimson sky */
-    /*color: crimson;*/
-
-    /* coral */
-    /*color: #ff533d;*/
-
-    /*color: #575366;*/
-
-    /*color: #04D38A;*/
-
+    color: #ff533d;
     flex-basis: 18%;
     text-align: center;
   }
@@ -270,7 +233,6 @@ Signup / Login Page Styling
   .each_game {
     border: none;
     border-radius: 0px;
-    /*background-image: url('../images/gplaypattern.png');*/
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
     margin: 0px auto 0.7rem auto;
     min-height: 2rem;
@@ -285,32 +247,7 @@ Signup / Login Page Styling
 
   .game_initial {
     align-items: center;
-        /**/
-    /*background-color: #ff7043;*/
-
-    /**/
-    /*background-color: #2cf;*/
-
-    /**/
-    /*background-color: #191c77;*/
-
-    /**/
-    /*background-color: #155765;*/
-
-    /* stormy */
-    /*background-color: #494e6b;*/
-
-    /* medium electric blue************ */
     background-color: #02558b;
-
-    /* rain */
-    /*background-color: #6ec4db;*/
-
-    /* charcoal */
-    /*background-color: #3c3c3c;*/
-
-    /*background-color: #0C7884;*/
-
     border-radius: 50%;
     box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -326,24 +263,18 @@ Signup / Login Page Styling
   }
 
   .game_title {
-    /*color: #191c77;*/
     color: #2cf;
-    /*color: #99ced4;*/
-    /*color: #3BFDB7;*/
-    /*color: #04D38A;*/
-    /*color: #d7dd35;*/
     margin-bottom: 0px;
   }
 
   .game_category {
     color: darkgray;
-    /*color: #d7dd35;*/
     font-style: italic;
     margin-bottom: 0px;
   }
 
  .material-icons.md-36.FAB {
-   background-color: #d7dd35;
+   background-color: #ff533d;
    border-radius: 50%;
    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.2);
    color: white;
@@ -355,7 +286,6 @@ Signup / Login Page Styling
 
   @keyframes slideInFromLeft {
     0% {
-      /*display: block;*/
       transform: translateX(-100%);
     }
     100% {
@@ -379,11 +309,9 @@ Signup / Login Page Styling
   ************************************/
 
   .singleGame {
-    /*background-color: #ddd;*/
     display: flex;
     flex-direction: column;
     min-height: 87vh;
-    /*padding-top: 1rem;*/
   }
 
   .singleGame .card {
@@ -428,7 +356,6 @@ Signup / Login Page Styling
   }
 
   .title_block h2 {
-    /*color: #2cf;*/
     color: #02558b;
   }
 
@@ -441,7 +368,6 @@ Signup / Login Page Styling
   }
 
   .singleGame .game_category {
-    /*margin-bottom: 1rem;*/
     padding-top: 0rem;
   }
 
@@ -463,9 +389,7 @@ Signup / Login Page Styling
   }
 
   .icon_bar i {
-    /*color: #ff7043;*/
-    /*color: #29e00d;*/
-    color: #d7dd35;
+    color: #ff533d;
     font-size: 32px;
     margin-right: 0rem;
     text-align: center;
@@ -491,10 +415,9 @@ Signup / Login Page Styling
   }
 
   .game_objective {
-    /*background: linear-gradient( #efefef, #fff,#efefef );*/
-    /*color: #ff7043;*/
-    color: #2cf;
-    /*color: #02558b;*/
+    background: linear-gradient(155deg, #02558b, #2cf);
+    border-radius: 0px;
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -505,9 +428,10 @@ Signup / Login Page Styling
   .house_rules {
     display: flex;
     justify-content: space-between;
+    margin-top: 2rem;
   }
 
-  .house_rules .btn {
+  .arrowButton {
     align-items: center;
     background-color: transparent;
     border: none;
@@ -545,24 +469,24 @@ Signup / Login Page Styling
   }
 
   .normal_rules {
-    /*background-color: #eee;*/
-    /*border: 2px solid darkgray;*/
     color: gray;
-    min-height: 8rem;
+    min-height: 6rem;
   }
 
   #game_rules {
     color: gray;
-    margin: 0rem auto 2rem;
+    margin: 0rem auto;
     width: 90%;
   }
 
   .alt_rules {
     border-radius: 0px;
-    box-shadow:
+    /*box-shadow:
       inset 0px 11px 8px -10px #bbb,
-      inset 0px -11px 8px -10px #bbb;
-    color: #2cf;
+      inset 0px -11px 8px -10px #bbb;*/
+    color: gray;
+    flex-basis: 100%;
+    padding-left: 5rem;
   }
 
   .alert h4 {
@@ -588,25 +512,27 @@ Signup / Login Page Styling
   }
 
   .each_alternate {
-    align-items: center;
+    align-items: baseline;
     border: none;
     border-radius: 3px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin: 0px auto 0.7rem auto;
-    min-height: 7rem;
+    min-height: 5rem;
     padding: 10px;
     padding-left: 0px;
     width: 100%;
   }
 
   .each_alternate .alternate_initial {
-    background-color: #d7dd35;
+    background-color: #ff533d;
     border-radius: 50%;
-    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.3);
     color: white;
     font-size: 2rem;
-    padding: 0.8rem 1.5rem 1rem;
+    padding: 0.4rem 1.1rem 0.6rem;
     margin: 0rem 2rem 0rem 1rem;
     text-transform: lowercase;
   }
@@ -621,8 +547,7 @@ Signup / Login Page Styling
 
   #delete_button {
     align-self: center;
-    /*background-color: #ff7043;*/
-    background-color: #d7dd35;
+    background-color: #ff533d;
     color: white;
     margin-top: 2rem;
     width: 20%;
@@ -657,7 +582,6 @@ Signup / Login Page Styling
   }
 
   label {
-    /*color: #ff7043;*/
     color: #2cf;
   }
 
@@ -683,8 +607,7 @@ Signup / Login Page Styling
   }
 
   .gameForm button {
-    /*background-color: #ff7043;*/
-    background-color: #d7dd35;
+    background-color: #ff533d;
     color: white;
     margin: 0.5rem auto;
     width: 40%;
@@ -705,7 +628,7 @@ Signup / Login Page Styling
   }
 
   .about-page h2 {
-    color: #d7dd35;
+    color: #ff533d;
     padding-bottom: 1rem;
     text-align: center;
   }
@@ -720,7 +643,6 @@ Signup / Login Page Styling
   }
 
   .about-page a {
-    /*color: #ff7043;*/
     color: #2cf;
   }
 
@@ -738,15 +660,13 @@ Signup / Login Page Styling
     text-align: center;
   }
 
-  .alternateForm input {
-    /*border: none;
-    border-bottom: 2px solid #2cf;*/
+  .alternateForm input, .alternateForm textarea {
     margin: 1.5rem auto;
     width: 90%;
   }
 
   .alternateForm .btn {
-    background-color: #d7dd35;
+    background-color: #ff533d;
     color: white;
   }
 

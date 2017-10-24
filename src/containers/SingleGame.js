@@ -80,9 +80,22 @@ export default class SingleGame extends Component {
           </div>
           <div>
             <h4 className="alternate_title">{game.title}</h4>
-            <h5 className="alternate_objective">{game.objective}</h5>
-            <p className="alternate_rules">{game.rules}</p>
           </div>
+
+          <button className='btn arrowButton' data-toggle="collapse" data-target={"#" + game.id} onClick={this.arrowToggle}><i className="material-icons" id="myArrow">add</i></button>
+
+          <div id={game.id} className="collapse alt_rules">
+            <h4>{game.objective}</h4>
+            <p>{game.rules}</p>
+          </div>
+
+
+
+
+
+
+
+
         </div>
       )
     })
@@ -125,23 +138,28 @@ export default class SingleGame extends Component {
             <p>{game.objective}</p>
           </div>
 
+
+
           <div className='house_rules alert normal_rules'>
             <div>
               <h4>Traditional rules</h4>
               <a className="alt_games_link" href="#altGamesList">...how about a different spin on the game?</a>
             </div>
-            <button className='btn' data-toggle="collapse" data-target="#demo" onClick={this.arrowToggle}>Add game<i className="material-icons" id="myArrow">add</i></button>
           </div>
 
           <p id="game_rules">{game.rules}</p>
 
+          <button className='btn arrowButton' data-toggle="collapse" data-target="#demo" onClick={this.arrowToggle}>Add Rules<i className="material-icons" id="myArrow">add</i></button>
+
           <div id="demo" className="collapse alt_rules">
-            <AddAlternate game={this.state.game} history={this.props.history} />
+            <AddAlternate game={this.state.game} history={this.props.history} arrowToggle={() => this.arrowToggle()} />
           </div>
 
           <div id="altGamesList">
             <h3 className="alt_list_header">House Rules</h3>
-            {alternatesList}
+              <div id="accordion" role="tablist" aria-multiselectable="true">
+                {alternatesList}
+              </div>
           </div>
 
         </div>

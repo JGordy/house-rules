@@ -48,6 +48,7 @@ export default class AddAlternate extends Component {
         rules: ''
       })
       this.props.history.push(`/games/${this.props.game.id}`);
+      // this.props.arrowToggle();
       // this.props.history.push(endpoint);
     } else {
       console.log("na ah ah, you didnt say the magic word");
@@ -71,11 +72,11 @@ export default class AddAlternate extends Component {
         </div>
 
         <div>
-          <input className="form-control" onChange={this.handleUpdateState('objective')} value={this.state.objective} placeholder="Objective" required autoFocus/>
+          <input className="form-control" onChange={this.handleUpdateState('objective')} value={this.state.objective} placeholder="Objective" required/>
         </div>
 
         <div>
-          <input className="form-control" onChange={this.handleUpdateState('rules')} value={this.state.rules} placeholder="House Rules" required autoFocus/>
+          <textarea className="form-control" onChange={this.handleUpdateState('rules')} value={this.state.rules} placeholder="House Rules" required></textarea>
         </div>
 
         <div className="form_submits">

@@ -120,7 +120,7 @@ export const getGameList = () => {
       return response.json()
     })
     .then(data => {
-      console.log("DATA: ",data);
+      // console.log("DATA: ",data);
       dispatch(setData(data));
     })
   }
