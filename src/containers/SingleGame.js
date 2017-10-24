@@ -86,7 +86,9 @@ export default class SingleGame extends Component {
           </div>
 
           <div id={game.id} className="collapse alt_rules">
+            <h5 className="game_labels">Objective</h5>
             <h4>{game.objective}</h4>
+            <h5 className="game_labels">New Rules</h5>
             <p>{game.rules}</p>
           </div>
 

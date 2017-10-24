@@ -312,7 +312,7 @@ Signup / Login Page Styling
   .singleGame {
     display: flex;
     flex-direction: column;
-    min-height: 87vh;
+    min-height: 90vh;
   }
 
   .singleGame .card {
@@ -552,6 +552,13 @@ Signup / Login Page Styling
     padding: 0rem;
   }
 
+  .each_alternate .game_labels {
+    color: darkgray;
+    font-size: 0.9rem;
+    font-style: italic;
+    padding-top: 1rem;
+  }
+
   #delete_button {
     align-self: center;
     background-color: #ff533d;
@@ -569,7 +576,7 @@ Signup / Login Page Styling
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 90vh;
+    height: 92vh;
   }
 
   .form-group {
