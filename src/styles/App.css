@@ -580,7 +580,7 @@ Signup / Login Page Styling
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    min-height: 90%;
+    min-height: 92vh;
     padding: 1rem;
     overflow: scroll;
   }
