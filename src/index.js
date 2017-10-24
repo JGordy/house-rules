@@ -18,10 +18,6 @@ import GameForm from './components/GameForm';
 import SingleGame from './containers/SingleGame';
 import About from './components/About';
 
-// Only chrome can handle the redux dev tool
-// redux compose cannot handle a null or undefined middleware
-
-
 const store = createStore(
     reducers,
     compose(

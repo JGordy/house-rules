@@ -81,11 +81,11 @@ export default class GameForm extends Component {
   render() {
     return (
       <div className="gameForm" onLoad={this.props.navToggle}>
-          <div className="form-group">
+          <div className="">
             <input className="form-control" onChange={this.handleUpdateState('title')} value={this.state.title} placeholder="Game title" required autoFocus/>
           </div>
 
-          <fieldset className="form-group">
+          <fieldset className="">
            <legend>Game Category</legend>
 
            <div className="radio_buttons_cat">
@@ -129,7 +129,7 @@ export default class GameForm extends Component {
 
 
 
-         <fieldset className="form-group">
+         <fieldset className="">
           <legend>Number of Players</legend>
 
           <div className="radio_buttons_cat">
@@ -171,7 +171,7 @@ export default class GameForm extends Component {
           </div>
         </fieldset>
 
-        <fieldset className="form-group">
+        <fieldset className="">
          <legend>Age Range</legend>
 
          <div className="radio_buttons_cat">
@@ -216,10 +216,10 @@ export default class GameForm extends Component {
 
 
 
-          <div className="form-group">
+          <div className="">
             <input className="form-control" onChange={this.handleUpdateState('objective')} value={this.state.objective} placeholder="Game Objective" required/>
           </div>
-          <div className="form-group">
+          <div className="">
             <textarea className="form-control" onChange={this.handleUpdateState('rules')} value={this.state.rules} placeholder="Normal Rules" required></textarea>
           </div>
           <div className="form_submits">
