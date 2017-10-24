@@ -32,7 +32,7 @@ export default class SingleGame extends Component {
     .catch(error => {
       console.log("Failure to delete: ", error);
     })
-    this.props.history.push('/games');
+    this.props.history.push('/House_Rules/games');
   }
 
 
