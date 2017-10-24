@@ -34,11 +34,11 @@ ReactDOM.render(
   <BrowserRouter>
     <BaseLayout>
       <Switch>
-        <Route exact path="/" component={App} />
-        <Route exact path='/games/:id' component={SingleGame} />
-        <Route exact path='/games' component={GameList} />
-        <Route exact path='/newGame' component={GameForm} />
-        <Route exact path='/about' component={About} />
+        <Route exact path="/House_Rules" component={App} />
+        <Route exact path='/House_Rules/games/:id' component={SingleGame} />
+        <Route exact path='/House_Rules/games' component={GameList} />
+        <Route exact path='/House_Rules/newGame' component={GameForm} />
+        <Route exact path='/House_Rules/about' component={About} />
       </Switch>
     </BaseLayout>
   </BrowserRouter>

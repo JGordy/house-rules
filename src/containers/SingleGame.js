@@ -104,7 +104,7 @@ export default class SingleGame extends Component {
               <h2 className='card-title alert'>{game.title}</h2>
             </div>
             <div className="arrow_container">
-              <Link to='/games'>
+              <Link to='/House_Rules/games'>
                 <i className="material-icons md-36">arrow_back</i>
               </Link>
             </div>
