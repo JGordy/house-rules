@@ -137,9 +137,9 @@ Signup / Login Page Styling
     text-align: left;
   }
 
-  .topnav.responsive a:hover {
+  /*.topnav.responsive a:hover {
       background-color: #ddd;
-  }
+  }*/
 
   .topnav.responsive .GamesLink {
     display:block;
