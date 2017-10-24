@@ -38,7 +38,7 @@ Signup / Login Page Styling
 }
 
 .topnav a:hover {
-  background-color: #ddd;
+
 }
 
 /* Hide the link that should open and close the topnav on small screens */
@@ -576,8 +576,9 @@ Signup / Login Page Styling
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    min-height: 92vh;
-    overflow: scroll;
+    /*min-height: 92vh;*/
+    min-height: 100%;
+    /*overflow: scroll;*/
   }
 
   .form-group {
