@@ -10,7 +10,6 @@ export default class SingleGame extends Component {
       alternates: []
     }
     this.arrowToggle = this.arrowToggle.bind(this);
-    this.handleDeleteGame = this.handleDeleteGame.bind(this);
   }
 
   arrowToggle() {
@@ -82,19 +81,12 @@ export default class SingleGame extends Component {
             <h4 className="alternate_title">{game.title}</h4>
           </div>
 
-          <button className='btn arrowButton' data-toggle="collapse" data-target={"#" + game.id} onClick={this.arrowToggle}><i className="material-icons" id="myArrow">add</i></button>
+          <button className='btn arrowButton' data-toggle="collapse" data-target={"#" + game.id}><i className="material-icons" id="myArrow">add</i></button>
 
           <div id={game.id} className="collapse alt_rules">
             <h4>{game.objective}</h4>
             <p>{game.rules}</p>
           </div>
-
-
-
-
-
-
-
 
         </div>
       )
@@ -106,7 +98,6 @@ export default class SingleGame extends Component {
           <div className="title_block">
             <div>
               <h2 className='card-title alert'>{game.title}</h2>
-              {/*<p className='game_category alert'>{game.category}</p>*/}
             </div>
             <div className="arrow_container">
               <Link to='/games'>
@@ -138,8 +129,6 @@ export default class SingleGame extends Component {
             <p>{game.objective}</p>
           </div>
 
-
-
           <div className='house_rules alert normal_rules'>
             <div>
               <h4>Traditional rules</h4>
@@ -149,17 +138,15 @@ export default class SingleGame extends Component {
 
           <p id="game_rules">{game.rules}</p>
 
-          <button className='btn arrowButton' data-toggle="collapse" data-target="#demo" onClick={this.arrowToggle}>Add Rules<i className="material-icons" id="myArrow">add</i></button>
+          <button className='btn arrowButton' data-toggle="collapse" data-target="#demo"onClick={this.arrowToggle}>Add Rules<i className="material-icons" id="myArrow">add</i></button>
 
-          <div id="demo" className="collapse alt_rules">
+          <div id="demo" className="collapse">
             <AddAlternate game={this.state.game} history={this.props.history} arrowToggle={() => this.arrowToggle()} />
           </div>
 
           <div id="altGamesList">
             <h3 className="alt_list_header">House Rules</h3>
-              <div id="accordion" role="tablist" aria-multiselectable="true">
-                {alternatesList}
-              </div>
+              {alternatesList}
           </div>
 
         </div>

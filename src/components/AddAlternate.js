@@ -49,7 +49,6 @@ export default class AddAlternate extends Component {
       })
       this.props.history.push(`/games/${this.props.game.id}`);
       // this.props.arrowToggle();
-      // this.props.history.push(endpoint);
     } else {
       console.log("na ah ah, you didnt say the magic word");
       this.setState({

@@ -9,7 +9,6 @@ class BaseLayout extends Component {
   this.navToggle = this.navToggle.bind(this);
   }
 
-
   // opens and closes the nav bar on click
   navToggle(endpoint) {
       let navBar = document.getElementById("myNavBar");

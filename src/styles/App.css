@@ -61,6 +61,7 @@ Signup / Login Page Styling
   .topnav {
     height: 55px;
     transition: height 0.7s;
+    width: 100%;
   }
 
   .topnav a:not(:first-child) {
@@ -105,7 +106,7 @@ Signup / Login Page Styling
   }
 
   div.form-group.login .btn, div.form-group.signup .btn{
-    background-color: #d7dd35;
+    background-color: #ff533d;
     color: white;
     margin-top: 0.5rem;
   }
@@ -114,8 +115,7 @@ Signup / Login Page Styling
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 800px) {
   .topnav.responsive {
-    position: relative;
-    height: 193px;
+    height: 200px;
     transition: height 0.7s;
   }
 
@@ -304,6 +304,7 @@ Signup / Login Page Styling
       transform: translateX(-10%);
     }
   }
+
   /***********************************
     Mobile Single Game Page Styling
   ************************************/
@@ -435,11 +436,12 @@ Signup / Login Page Styling
     align-items: center;
     background-color: transparent;
     border: none;
-    color: gray;
+    color: #ff553d;
     display: flex;
+    font-size: 20px;
     height: 2rem;
     justify-content: center;
-    padding: 0.25rem;
+    margin: 0.5rem;
   }
 
   .house_rules > .btn:focus, .house_rules > .btn.collapsed:focus {
@@ -481,9 +483,6 @@ Signup / Login Page Styling
 
   .alt_rules {
     border-radius: 0px;
-    /*box-shadow:
-      inset 0px 11px 8px -10px #bbb,
-      inset 0px -11px 8px -10px #bbb;*/
     color: gray;
     flex-basis: 100%;
     padding-left: 5rem;
@@ -507,7 +506,7 @@ Signup / Login Page Styling
   }
 
   .alt_list_header {
-    color: gray;
+    color: #2cf;
     padding: 1rem;
   }
 
@@ -521,7 +520,7 @@ Signup / Login Page Styling
     justify-content: space-between;
     margin: 0px auto 0.7rem auto;
     min-height: 5rem;
-    padding: 10px;
+    padding: 1rem;
     padding-left: 0px;
     width: 100%;
   }
@@ -651,7 +650,8 @@ Signup / Login Page Styling
 ************************************/
 
   .alternateForm {
-    background-color: #02558b;
+    /*background-color: #02558b;*/
+    background: linear-gradient(155deg, #02558b, #2cf);
     padding: 2rem 1rem;
   }
 
@@ -663,6 +663,10 @@ Signup / Login Page Styling
   .alternateForm input, .alternateForm textarea {
     margin: 1.5rem auto;
     width: 90%;
+  }
+
+  .alternateForm textarea {
+    height: 10rem;
   }
 
   .alternateForm .btn {
