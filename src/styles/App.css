@@ -577,8 +577,8 @@ Signup / Login Page Styling
     flex-direction: column;
     justify-content: space-around;
     /*min-height: 92vh;*/
-    min-height: 650px;
-    /*overflow: scroll;*/
+    min-height: 1000px;
+    overflow: scroll;
   }
 
   .form-group {
