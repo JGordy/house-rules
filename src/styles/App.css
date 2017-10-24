@@ -484,7 +484,6 @@ Signup / Login Page Styling
   .alt_rules {
     border-radius: 0px;
     color: gray;
-    flex-basis: 100%;
     padding-left: 5rem;
   }
 
@@ -506,18 +505,14 @@ Signup / Login Page Styling
   }
 
   .alt_list_header {
-    color: #2cf;
+    color: #02558b;
     padding: 1rem;
   }
 
   .each_alternate {
-    align-items: baseline;
     border: none;
     border-radius: 3px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     margin: 0px auto 0.7rem auto;
     min-height: 5rem;
     padding: 1rem;
@@ -525,14 +520,21 @@ Signup / Login Page Styling
     width: 100%;
   }
 
+  .each_alternate .alt_game_label {
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+  }
+
   .each_alternate .alternate_initial {
     background-color: #ff533d;
     border-radius: 50%;
-    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
     color: white;
+    flex-basis: 10%;
     font-size: 2rem;
     padding: 0.4rem 1.1rem 0.6rem;
-    margin: 0rem 2rem 0rem 1rem;
+    margin: 0rem 0rem 0rem 1rem;
     text-transform: lowercase;
   }
 
@@ -542,6 +544,12 @@ Signup / Login Page Styling
 
   .each_alternate .alternate_objective, .each_alternate .alternate_rules {
     color: gray;
+  }
+
+  .each_alternate .arrowButton {
+    color: gray;
+    margin: 0rem;
+    padding: 0rem;
   }
 
   #delete_button {

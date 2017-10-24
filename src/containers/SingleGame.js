@@ -74,14 +74,16 @@ export default class SingleGame extends Component {
     let alternatesList = this.state.alternates.map((game) => {
       return (
         <div className="each_alternate card-block" key={game.id}>
-          <div>
-            <h3 className="alternate_initial">{game.title[0]}</h3>
-          </div>
-          <div>
-            <h4 className="alternate_title">{game.title}</h4>
-          </div>
+          <div className="alt_game_label">
+            <div>
+              <h3 className="alternate_initial">{game.title[0]}</h3>
+            </div>
+            <div>
+              <h4 className="alternate_title">{game.title}</h4>
+            </div>
 
-          <button className='btn arrowButton' data-toggle="collapse" data-target={"#" + game.id}><i className="material-icons" id="myArrow">add</i></button>
+            <button className='btn arrowButton' data-toggle="collapse" data-target={"#" + game.id}><i className="material-icons" id="myArrow">add</i></button>
+          </div>
 
           <div id={game.id} className="collapse alt_rules">
             <h4>{game.objective}</h4>
@@ -125,7 +127,7 @@ export default class SingleGame extends Component {
           </div>
 
           <div className='alert game_objective'>
-            <h5>How to Win:</h5>
+            <h5>How to Win</h5>
             <p>{game.objective}</p>
           </div>
 
