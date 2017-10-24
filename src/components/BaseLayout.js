@@ -15,14 +15,14 @@ class BaseLayout extends Component {
       let icon = document.getElementById("icon");
 
       if ((navBar.className === "topnav") &&
-          (endpoint !== "/")) {
+          (endpoint !== "/House_Rules/")) {
           navBar.className += " responsive";
       } else {
           navBar.className = "topnav";
       }
 
       if ((icon.className === "icon") &&
-          (endpoint !== "/")) {
+          (endpoint !== "/House_Rules/")) {
         icon.className += " rotate";
       } else {
         icon.className = "icon";
@@ -41,7 +41,7 @@ class BaseLayout extends Component {
 
           <nav className="topnav" id="myNavBar">
 
-            <Link className="Logo" to='#' onClick={() => this.handleNaviagation('/House_Rules')}>House Rules</Link>
+            <Link className="Logo" to='#' onClick={() => this.handleNaviagation('/House_Rules/')}>House Rules</Link>
 
             <Link
             className="GamesLink" to='#' onClick={() => this.handleNaviagation('/House_Rules/games')}><i className="material-icons">casino</i>Games
@@ -52,7 +52,7 @@ class BaseLayout extends Component {
 
             <Link className="AboutLink" to='#' onClick={() => this.handleNaviagation('/House_Rules/about')}><i className="material-icons">local_library</i>About</Link>
 
-            <Link className="LogOutLink" to="#" onClick={() => this.handleNaviagation('/House_Rules')}><i className="material-icons">chevron_left</i>Log Out</Link>
+            <Link className="LogOutLink" to="#" onClick={() => this.handleNaviagation('/House_Rules/')}><i className="material-icons">chevron_left</i>Log Out</Link>
 
             <div id='icon' className="icon" onClick={this.navToggle}>&#9776;</div>
           </nav>
