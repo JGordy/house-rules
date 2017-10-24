@@ -223,8 +223,8 @@ export default class GameForm extends Component {
             <textarea className="form-control" onChange={this.handleUpdateState('rules')} value={this.state.rules} placeholder="Normal Rules" required></textarea>
           </div>
           <div className="form_submits">
-            <button className="btn" onClick={this.handleSubmit('/games')}>Submit</button>
-            <p className="another_game_link" onClick={this.handleSubmit('/newGame')}>or submit and add another game</p>
+            <button className="btn" onClick={this.handleSubmit('/House_Rules/games')}>Submit</button>
+            <p className="another_game_link" onClick={this.handleSubmit('/House_Rules/newGame')}>or submit and add another game</p>
           </div>
       </div>
     )
