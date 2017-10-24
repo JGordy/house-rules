@@ -5,7 +5,7 @@ Signup / Login Page Styling
 .App {
   background-image: url('../images/gplaypattern.png');
   text-align: center;
-  height: 90vh;
+  height: 90%;
 }
 
 .App input {
@@ -580,7 +580,7 @@ Signup / Login Page Styling
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    min-height: 92vh;
+    min-height: 90%;
     padding: 1rem;
     overflow: scroll;
   }
