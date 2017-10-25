@@ -48,6 +48,4 @@ const reducer = (state = initialState, action) => {
     }
 }
 
-// const reducer = combineReducers({people: PeopleDataFilter, films: FilmsData, starships: StarshipsData, details: details});
-
 export default reducer;

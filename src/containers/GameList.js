@@ -60,32 +60,34 @@ class GameList extends Component {
           <h5 className="filter_header"> Filter Game Types</h5>
 
           <Link to="#" onClick={() => this.handleFilterChange('all')}>
-          <i className="material-icons all_games_filter">dns</i>
-          <p><span className="">All</span></p>
+            <i className="material-icons all_games_filter">dns</i>
+            <p><span className="">All</span></p>
           </Link>
 
           <Link to="#" onClick={() => this.handleFilterChange('card')}>
-          <i className="material-icons card_hand">style</i>
-          <p><span className="">Card</span></p>
+            <i className="material-icons card_hand">style</i>
+            <p><span className="">Card</span></p>
           </Link>
 
           <Link to="#" onClick={() => this.handleFilterChange('board')}>
-          <i className="material-icons">dashboard</i>
-          <p><span className="">Board</span></p>
+            <i className="material-icons">dashboard</i>
+            <p><span className="">Board</span></p>
           </Link>
 
           <Link to="#" onClick={() => this.handleFilterChange('dice')}>
-          <i className="material-icons">casino</i>
-          <p><span className="">Dice</span></p>
+            <i className="material-icons">casino</i>
+            <p><span className="">Dice</span></p>
           </Link>
 
           <Link to="#" onClick={() => this.handleFilterChange('recreational sports')}>
-          <i className="material-icons">golf_course</i>
-          <p><span className="">Rec Sports</span></p>
+            <i className="material-icons">golf_course</i>
+            <p><span className="">Rec Sports</span></p>
           </Link>
 
         </div>
+
         {gamesList}
+        
         <div>
           <Link to='/House_Rules/newGame'>
             <i className="material-icons md-36 FAB">add</i>

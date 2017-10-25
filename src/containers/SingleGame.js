@@ -14,6 +14,7 @@ export default class SingleGame extends Component {
 
   arrowToggle() {
     var backArrow = document.getElementById('myArrow');
+
     if (backArrow.className === "material-icons") {
       backArrow.className += " rotate";
     } else {
@@ -23,6 +24,7 @@ export default class SingleGame extends Component {
 
 
   handleDeleteGame = (gameId) => {
+
     fetch(`https://house-rules-jgwrbs.herokuapp.com/api/game/${gameId}/delete`, {
       method: "DELETE"
     })
@@ -32,7 +34,9 @@ export default class SingleGame extends Component {
     .catch(error => {
       console.log("Failure to delete: ", error);
     })
+
     this.props.history.push('/House_Rules/games');
+
   }
 
 
@@ -40,6 +44,7 @@ export default class SingleGame extends Component {
     let match = this.props.match;
     const id = match.params.id;
     const URL = `https://house-rules-jgwrbs.herokuapp.com/api/game/${id}`;
+
     fetch(URL)
     .then(response => {
       return response.json()
@@ -100,32 +105,39 @@ export default class SingleGame extends Component {
       <div className="singleGame">
         <div className='card card-block'>
           <div className="title_block">
+
             <div>
               <h2 className='card-title alert'>{game.title}</h2>
             </div>
+
             <div className="arrow_container">
               <Link to='/House_Rules/games'>
                 <i className="material-icons md-36">arrow_back</i>
               </Link>
             </div>
+
           </div>
 
           <div className='alert icon_bar'>
-          <div>
-            <i className="material-icons group" id={game.category}>{gameIcon}</i>
-            <p>Category</p>
-            <p>{game.category}</p>
-          </div>
+
+            <div>
+              <i className="material-icons group" id={game.category}>{gameIcon}</i>
+              <p>Category</p>
+              <p>{game.category}</p>
+            </div>
+
             <div>
               <i className="material-icons group">group</i>
               <p>Players</p>
               <p className=''>{game.numberOfPlayers}</p>
             </div>
+
             <div>
               <i className="material-icons face">face</i>
               <p>Ages</p>
               <p className=''>{game.playerAgeRange}</p>
             </div>
+            
           </div>
 
           <div className='alert game_objective'>
