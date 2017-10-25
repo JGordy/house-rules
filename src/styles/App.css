@@ -100,6 +100,11 @@ Signup / Login Page Styling
   .topnav .Logo {
     margin-left: -1.4rem;
     padding-left: 1rem;
+    padding-top: 0.75rem;
+  }
+
+  .topnav .Logo span {
+    padding-top: 0.5rem;
   }
 
   .topnav .icon {
