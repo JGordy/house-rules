@@ -41,7 +41,9 @@ class BaseLayout extends Component {
 
           <nav className="topnav" id="myNavBar">
 
-            <Link className="Logo" to='#' onClick={() => this.handleNaviagation('/House_Rules/')}>House Rules</Link>
+            <Link className="Logo" to='#' onClick={() => this.handleNaviagation('/House_Rules/')}>
+            <img src={require('../images/house-rules-white.png')} />
+            House Rules</Link>
 
             <Link
             className="GamesLink" to='#' onClick={() => this.handleNaviagation('/House_Rules/games')}>
@@ -69,7 +71,7 @@ class BaseLayout extends Component {
           </nav>
 
             {this.props.children}
-            
+
       </div>
     );
   }

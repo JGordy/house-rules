@@ -118,7 +118,9 @@ export default class SingleGame extends Component {
           </div>
 
           <div id={game.id} className="collapse alt_rules">
-            <Link to="#" id="delete_button" className="btn" onClick={() => this.handleDeleteHouseRules(`${this.state.id}`, `${game.id}`)}><i className="material-icons">delete</i></Link>
+
+            <Link to="#" id="delete_rules_button" className="btn" onClick={() => this.handleDeleteHouseRules(`${this.state.game.id}`, `${game.id}`)}><i className="material-icons">delete</i></Link>
+
             <div>
               <h5 className="game_labels">Objective</h5>
               <h4>{game.objective}</h4>
@@ -192,9 +194,10 @@ export default class SingleGame extends Component {
           </div>
 
           <div id="altGamesList">
-            <h3 className="alt_list_header">House Rules</h3>
+            <h3 className="alt_list_header">{this.state.alternates.length === 0 ? 'Be the first to add House Rules for this game' : 'House Rules'}</h3>
 
               {alternatesList}
+
           </div>
 
         </div>
