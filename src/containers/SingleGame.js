@@ -170,7 +170,7 @@ export default class SingleGame extends Component {
 
         <div>
           <a href='#myNavBar'>
-            <i className="material-icons md-36">add</i>
+            <i className="material-icons md-36">arrow_upward</i>
           </a>
         </div>
 
