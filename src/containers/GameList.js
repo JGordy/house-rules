@@ -54,7 +54,7 @@ class GameList extends Component {
                     <div className="game_initial"><i className="material-icons group" id={game.category}>{gameIcon}</i></div>
                     <div>
                        <h4 className="game_title card-title">{game.title}</h4>
-                       <p className="game_category"> {game.alternates.length <= 1 ? "1 way to play" : `${game.alternates.length} ways to play!`} </p>
+                       <p className="game_category"> {game.alternates.length < 1 ? "1 way to play" : `${game.alternates.length + 1} ways to play`} </p>
                     </div>
                  </Link>
                </div>;
@@ -91,7 +91,7 @@ class GameList extends Component {
                     <div className="game_initial"><i className="material-icons group" id={game.category}>{gameIcon}</i></div>
                     <div>
                        <h4 className="game_title card-title">{game.title}</h4>
-                       <p className="game_category">{game.alternates.length <= 1 ? "1 way to play" : `${game.alternates.length} ways to play!`}</p>
+                       <p className="game_category">{game.alternates.length < 1 ? "1 way to play" : `${game.alternates.length + 1} ways to play`}</p>
                     </div>
                  </Link>
                </div>;
