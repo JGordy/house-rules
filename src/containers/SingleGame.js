@@ -22,6 +22,12 @@ export default class SingleGame extends Component {
     }
   }
 
+  toggleReadMore = () => {
+    let readMore = document.getElementById('read_more');
+    console.log(readMore);
+    readMore.style.height='100%';
+  }
+
 
   handleDeleteGame = (gameId) => {
 
@@ -39,6 +45,19 @@ export default class SingleGame extends Component {
 
   }
 
+  handleDeleteHouseRules = (gameId, rulesId) => {
+
+    fetch(`https://house-rules-jgwrbs.herokuapp.com/api/game/${gameId}/alternate/${rulesId}/delete`, {
+      method: "DELETE"
+    })
+    .then(response => {
+      console.log("DELETE SUCCESSFUL: ", response);
+    })
+    .catch(error => {
+      console.log("FAILURE TO DELETE: ", error);
+    })
+    // push??
+  }
 
   componentDidMount() {
     let match = this.props.match;
@@ -91,10 +110,13 @@ export default class SingleGame extends Component {
           </div>
 
           <div id={game.id} className="collapse alt_rules">
-            <h5 className="game_labels">Objective</h5>
-            <h4>{game.objective}</h4>
-            <h5 className="game_labels">New Rules</h5>
-            <p>{game.rules}</p>
+            <Link to="#" id="delete_button" className="btn" onClick={() => this.handleDeleteHouseRules(`${this.state.id}`, `${game.id}`)}><i className="material-icons">delete</i></Link>
+            <div>
+              <h5 className="game_labels">Objective</h5>
+              <h4>{game.objective}</h4>
+              <h5 className="game_labels">New Rules</h5>
+              <p>{game.rules}</p>
+            </div>
           </div>
 
         </div>
@@ -153,6 +175,7 @@ export default class SingleGame extends Component {
           </div>
 
           <p id="game_rules">{game.rules}</p>
+          <div className="read_more" id="read_more" onClick={() => this.toggleReadMore()}>Read more</div>
 
           <button className='btn arrowButton' data-toggle="collapse" data-target="#demo"onClick={this.arrowToggle}>Add Rules<i className="material-icons" id="myArrow">add</i></button>
 
@@ -162,6 +185,7 @@ export default class SingleGame extends Component {
 
           <div id="altGamesList">
             <h3 className="alt_list_header">House Rules</h3>
+
               {alternatesList}
           </div>
 
@@ -170,7 +194,7 @@ export default class SingleGame extends Component {
 
         <div>
           <a href='#myNavBar'>
-            <i className="material-icons md-36">arrow_upward</i>
+            <i className="material-icons md-36 top_arrow">arrow_upward</i>
           </a>
         </div>
 

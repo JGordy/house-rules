@@ -115,7 +115,7 @@ export function setUser(payload) {
 // calling the api for the entire gamelist
 export const getGameList = () => {
   return(dispatch, getState) => {
-    fetch('https://house-rules-jgwrbs.herokuapp.com/api/games')
+    fetch('https://house-rules-jgwrbs.herokuapp.com/api/gameList')
     .then(response => {
       return response.json()
     })

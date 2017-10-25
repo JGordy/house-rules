@@ -23,13 +23,35 @@ class GameList extends Component {
   };
 
   render () {
+
     // map over game data array
     let gamesList;
     if (this.state.filter === 'all') {
       gamesList = this.props.gamesList.map((game) => {
+
+        let gameCategory = game.category;
+        let gameIcon;
+
+        switch (gameCategory) {
+          case "card":
+            gameIcon = 'style';
+            break;
+          case "board":
+            gameIcon = 'dashboard';
+            break;
+          case "dice":
+            gameIcon = 'casino';
+            break;
+          case "recreational sports":
+            gameIcon = "golf_course";
+            break;
+          default:
+            gameIcon = "widgets"
+        }
+
         return <div key={game.id} className="each_game card-block card">
                   <Link to={`/House_Rules/games/${game.id}`}>
-                    <div className="game_initial"><h3>{game.title[0]}</h3></div>
+                    <div className="game_initial"><i className="material-icons group" id={game.category}>{gameIcon}</i></div>
                     <div>
                        <h4 className="game_title card-title">{game.title}</h4>
                        <p className="game_category">{game.category}</p>
@@ -37,14 +59,36 @@ class GameList extends Component {
                  </Link>
                </div>;
       })
-    } else if (this.state.filter !== 'all') {
+    } else {
       let filteredGames = this.props.gamesList.filter(game => {
+
         return game.category === this.state.filter;
       });
       gamesList = filteredGames.map((game) => {
+
+        let gameCategory = game.category;
+        let gameIcon;
+
+        switch (gameCategory) {
+          case "card":
+            gameIcon = 'style';
+            break;
+          case "board":
+            gameIcon = 'dashboard';
+            break;
+          case "dice":
+            gameIcon = 'casino';
+            break;
+          case "recreational sports":
+            gameIcon = "golf_course";
+            break;
+          default:
+            gameIcon = "widgets"
+        }
+
         return <div key={game.id} className="each_game card-block card">
                   <Link to={`/House_Rules/games/${game.id}`}>
-                    <div className="game_initial"><h3>{game.title[0]}</h3></div>
+                    <div className="game_initial"><i className="material-icons group" id={game.category}>{gameIcon}</i></div>
                     <div>
                        <h4 className="game_title card-title">{game.title}</h4>
                        <p className="game_category">{game.category}</p>
@@ -81,13 +125,13 @@ class GameList extends Component {
 
           <Link to="#" onClick={() => this.handleFilterChange('recreational sports')}>
             <i className="material-icons">golf_course</i>
-            <p><span className="">Rec Sports</span></p>
+            <p><span className="">Sports</span></p>
           </Link>
 
         </div>
 
         {gamesList}
-        
+
         <div>
           <Link to='/House_Rules/newGame'>
             <i className="material-icons md-36 FAB">add</i>
