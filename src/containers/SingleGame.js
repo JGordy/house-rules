@@ -87,7 +87,7 @@ export default class SingleGame extends Component {
               <h4 className="alternate_title">{game.title}</h4>
             </div>
 
-            <button className='btn arrowButton' data-toggle="collapse" data-target={"#" + game.id}><i className="material-icons" id="myArrow">add</i></button>
+            <button className='btn arrowButton' data-toggle="collapse" data-target={"#" + game.id}><i className="material-icons" id="myArrow">expand_more</i></button>
           </div>
 
           <div id={game.id} className="collapse alt_rules">
@@ -137,7 +137,7 @@ export default class SingleGame extends Component {
               <p>Ages</p>
               <p className=''>{game.playerAgeRange}</p>
             </div>
-            
+
           </div>
 
           <div className='alert game_objective'>
@@ -167,6 +167,13 @@ export default class SingleGame extends Component {
 
         </div>
         <Link to="#" id="delete_button" className="btn" onClick={() => this.handleDeleteGame(`${game.id}`)}><i className="material-icons">delete</i></Link>
+
+        <div>
+          <a href='#myNavBar'>
+            <i className="material-icons md-36">add</i>
+          </a>
+        </div>
+
       </div>
     );
   }
