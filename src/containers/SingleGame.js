@@ -108,7 +108,9 @@ export default class SingleGame extends Component {
         <div className="each_alternate card-block" key={game.id}>
           <div className="alt_game_label">
             <div>
-              <h3 className="alternate_initial">{game.title[0]}</h3>
+              <h3 className="alternate_initial">
+                <img src={require('../images/house-rules-white.png')} alt="#"/>
+              </h3>
             </div>
             <div>
               <h4 className="alternate_title">{game.title}</h4>

@@ -301,13 +301,11 @@ Signup / Login Page Styling
     display: flex;
     flex-basis: 3rem;
     justify-content: center;
-    margin: 0rem 1rem;
+    margin: 0rem 2.5rem 0rem 1rem;
   }
 
   .game_initial i {
     color: white;
-    /*font-size: 36px;*/
-    /*padding: 0.5rem 1rem;*/
   }
 
   .game_initial #card {
@@ -622,9 +620,13 @@ Signup / Login Page Styling
     color: white;
     flex-basis: 10%;
     font-size: 2rem;
-    padding: 0.4rem 1.1rem 0.6rem;
+    padding: 0.3rem 0.6rem 0.6rem;
     margin: 0rem 0rem 0rem 1rem;
     text-transform: lowercase;
+  }
+
+  .alternate_initial img {
+    width: 2rem;
   }
 
   .each_alternate .alternate_title {
