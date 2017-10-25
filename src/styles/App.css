@@ -80,7 +80,7 @@ Signup / Login Page Styling
 
   .topnav {
     height: 55px;
-    transition: height 0.7s;
+    transition: height 0.5s;
     width: 100%;
   }
 
@@ -136,7 +136,7 @@ Signup / Login Page Styling
 @media screen and (max-width: 800px) {
   .topnav.responsive {
     height: 200px;
-    transition: height 0.7s;
+    transition: height 0.5s;
   }
 
   .topnav.responsive .icon {
