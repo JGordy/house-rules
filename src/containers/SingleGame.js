@@ -23,11 +23,19 @@ export default class SingleGame extends Component {
   }
 
   toggleReadMore = () => {
+    let gameRules = document.getElementById('game_rules');
     let readMore = document.getElementById('read_more');
-    console.log(readMore);
-    readMore.style.height='100%';
-  }
 
+    if (gameRules.style.height === "auto") {
+      gameRules.style.height = "12rem";
+      gameRules.style.transition = "height 0.5s";
+      readMore.textContent = "Read more";
+    } else {
+      gameRules.style.height="auto";
+      gameRules.style.transition = 'height 0.5s';
+      readMore.textContent = "Read Less";
+    }
+  }
 
   handleDeleteGame = (gameId) => {
 

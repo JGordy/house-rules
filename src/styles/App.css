@@ -521,16 +521,18 @@ Signup / Login Page Styling
     height: 12rem;
     margin: 0rem auto;
     overflow: hidden;
-    padding: 0.5rem;
+    padding: 1rem;
     width: 100%;
+    transition: height 0.5s;
   }
 
   .read_more {
     background: linear-gradient(to bottom, transparent, #fdfdff 50%);
-    color: #2cf;
-    margin-top: -1.5rem;
+    color: #02558b;
+    margin-top: -1rem;
     padding: 0.5rem;
     text-align: center;
+    text-transform: uppercase;
   }
 
   .alt_rules {
