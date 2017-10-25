@@ -5,7 +5,7 @@ Signup / Login Page Styling
 .App {
   background-image: url('../images/gplaypattern.png');
   text-align: center;
-  height: 90%;
+  height: 92vh;
 }
 
 .App input {
@@ -218,7 +218,7 @@ Signup / Login Page Styling
   }
 
   .filter-bar p {
-    color: darkgray;
+    color: #02558b;
     font-size: 14px;
     text-align: center;
   }
@@ -602,7 +602,7 @@ Signup / Login Page Styling
   }
 
   label {
-    color: #2cf;
+    color: #ff533d;
   }
 
   .radio_buttons_cat {
@@ -610,6 +610,10 @@ Signup / Login Page Styling
     justify-content: space-between;
     margin: 0rem auto;
     width: 95%;
+  }
+
+  label input {
+        margin-right: 0.2rem;
   }
 
   .players_radios {

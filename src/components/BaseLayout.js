@@ -44,19 +44,32 @@ class BaseLayout extends Component {
             <Link className="Logo" to='#' onClick={() => this.handleNaviagation('/House_Rules/')}>House Rules</Link>
 
             <Link
-            className="GamesLink" to='#' onClick={() => this.handleNaviagation('/House_Rules/games')}><i className="material-icons">casino</i>Games
+            className="GamesLink" to='#' onClick={() => this.handleNaviagation('/House_Rules/games')}>
+              <i className="material-icons">casino</i>
+              Games
             </Link>
 
             <Link className="NewGameLink" to='#'
-            onClick={() => this.handleNaviagation('/House_Rules/newGame')}><i className="material-icons">add</i>Add Game</Link>
+            onClick={() => this.handleNaviagation('/House_Rules/newGame')}>
+              <i className="material-icons">add</i>
+              Add Game
+            </Link>
 
-            <Link className="AboutLink" to='#' onClick={() => this.handleNaviagation('/House_Rules/about')}><i className="material-icons">local_library</i>About</Link>
+            <Link className="AboutLink" to='#' onClick={() => this.handleNaviagation('/House_Rules/about')}>
+              <i className="material-icons">local_library</i>
+              About
+            </Link>
 
-            <Link className="LogOutLink" to="#" onClick={() => this.handleNaviagation('/House_Rules/')}><i className="material-icons">chevron_left</i>Log Out</Link>
+            <Link className="LogOutLink" to="#" onClick={() => this.handleNaviagation('/House_Rules/')}>
+              <i className="material-icons">chevron_left</i>
+              Log Out
+            </Link>
 
             <div id='icon' className="icon" onClick={this.navToggle}>&#9776;</div>
           </nav>
+
             {this.props.children}
+            
       </div>
     );
   }

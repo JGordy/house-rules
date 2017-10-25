@@ -18,45 +18,50 @@ export default class AddAlternate extends Component {
 
   handleSubmit = (endpoint) => {
     return (event) => {
-    event.preventDefault();
-    this.setState({
-      title: event.target.value,
-      objective: event.target.value,
-      rules: event.target.value
-    })
-    let alternateGame = JSON.stringify(this.state);
-    if ((this.state.title !== "") &&
-        (this.state.objective !== "") &&
-        (this.state.rules) !== "") {
-      fetch(`https://house-rules-jgwrbs.herokuapp.com/api/game/${this.props.game.id}/alternate`, {
-        method: "POST",
-        body: alternateGame,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(response => {
-        console.log("RESPONSE: ", response);
-      })
-      .catch(error => {
-        console.log("ERROR: ", error);
+
+      event.preventDefault();
+      this.setState({
+        title: event.target.value,
+        objective: event.target.value,
+        rules: event.target.value
       })
 
-      this.setState({
-        title: '',
-        objective: '',
-        rules: ''
-      })
-      this.props.history.push(`/games/${this.props.game.id}`);
-      // this.props.arrowToggle();
-    } else {
-      console.log("na ah ah, you didnt say the magic word");
-      this.setState({
-        title: '',
-        objective: '',
-        rules: ''
-      })
-    }
+      let alternateGame = JSON.stringify(this.state);
+
+      if ((this.state.title !== "") &&
+          (this.state.objective !== "") &&
+          (this.state.rules) !== "") {
+
+        fetch(`https://house-rules-jgwrbs.herokuapp.com/api/game/${this.props.game.id}/alternate`, {
+          method: "POST",
+          body: alternateGame,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(response => {
+          console.log("RESPONSE: ", response);
+        })
+        .catch(error => {
+          console.log("ERROR: ", error);
+        })
+
+        this.setState({
+          title: '',
+          objective: '',
+          rules: ''
+        })
+        this.props.history.push(`/games/${this.props.game.id}`);
+        // this.props.arrowToggle();
+      } else {
+        
+        console.log("na ah ah, you didnt say the magic word");
+        this.setState({
+          title: '',
+          objective: '',
+          rules: ''
+        })
+      }
     }
   }
 

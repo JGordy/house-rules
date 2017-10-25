@@ -50,9 +50,9 @@ class App extends Component {
 
 
   componentWillMount() {
-        const loadToken = this.props.loadToken;
-        loadToken();
-    }
+    const loadToken = this.props.loadToken;
+    loadToken();
+  }
 
 
   render() {
