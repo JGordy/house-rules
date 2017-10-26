@@ -51,10 +51,10 @@ export default class AddAlternate extends Component {
           objective: '',
           rules: ''
         })
-        this.props.history.push(`/games/${this.props.game.id}`);
+        this.props.history.push(`/House_Rules/games/${this.props.game.id}`);
         // this.props.arrowToggle();
       } else {
-        
+
         console.log("na ah ah, you didnt say the magic word");
         this.setState({
           title: '',

@@ -496,16 +496,28 @@ Signup / Login Page Styling
     margin-top: 2rem;
   }
 
-  .arrowButton {
+  .arrowButton, .arrowButton2 {
     align-items: center;
-    background-color: transparent;
+    background-color: #ff553d;
     border: none;
-    color: #ff553d;
+    color: white;
     display: flex;
-    font-size: 20px;
+    font-size: 18px;
     height: 2rem;
     justify-content: center;
     margin: 0.5rem;
+  }
+
+  .arrowButton {
+    border-radius: 20px;
+    margin: 0rem auto 0.5rem;
+    padding-bottom: 2rem;
+    width: 40%;
+  }
+
+  .arrowButton2 {
+    background-color: transparent;
+    color: gray;
   }
 
   .house_rules > .btn:focus, .house_rules > .btn.collapsed:focus {
@@ -565,8 +577,14 @@ Signup / Login Page Styling
   .alt_rules {
     border-radius: 0px;
     color: gray;
-    padding: 1rem;
+    padding: 0rem 1rem;
   }
+
+  /*.collapsed.alt_rules {
+    padding: 0;
+    margin: 0;
+    transition: padding 0.2s;
+  }*/
 
   #delete_rules_button {
     color: transparent;
@@ -610,7 +628,7 @@ Signup / Login Page Styling
   .each_alternate .alt_game_label {
     align-items: baseline;
     display: flex;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
   }
 
   .each_alternate .alternate_initial {
@@ -618,10 +636,9 @@ Signup / Login Page Styling
     border-radius: 50%;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
     color: white;
-    flex-basis: 10%;
     font-size: 2rem;
     padding: 0.3rem 0.6rem 0.6rem;
-    margin: 0rem 0rem 0rem 1rem;
+    margin: 0rem 2rem 0rem 1rem;
     text-transform: lowercase;
   }
 
@@ -629,12 +646,18 @@ Signup / Login Page Styling
     width: 2rem;
   }
 
+  .title_container {
+    flex: 1 0 60%;
+  }
+
   .each_alternate .alternate_title {
     color: #2cf;
+    text-align: left;
   }
 
   .each_alternate .arrowButton {
     color: gray;
+    flex-basis: 10%;
     margin: 0rem;
     padding: 0rem;
   }
@@ -647,12 +670,13 @@ Signup / Login Page Styling
     color: darkgray;
     font-size: 0.9rem;
     font-style: italic;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
   }
 
   #delete_button {
     align-self: center;
-    background-color: #ff533d;
+    /*background-color: #ff533d;*/
+    background-color: transparent;
     color: white;
     margin-top: 2rem;
     width: 20%;

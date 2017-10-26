@@ -107,16 +107,16 @@ export default class SingleGame extends Component {
       return (
         <div className="each_alternate card-block" key={game.id}>
           <div className="alt_game_label">
-            <div>
+            <div className="initial_container">
               <h3 className="alternate_initial">
                 <img src={require('../images/house-rules-white.png')} alt="#"/>
               </h3>
             </div>
-            <div>
+            <div className="title_container">
               <h4 className="alternate_title">{game.title}</h4>
             </div>
 
-            <button className='btn arrowButton' data-toggle="collapse" data-target={"#" + game.id}><i className="material-icons" id="myArrow">expand_more</i></button>
+            <button className='btn arrowButton2' data-toggle="collapse" data-target={"#" + game.id}><i className="material-icons" id="myArrow">expand_more</i></button>
           </div>
 
           <div id={game.id} className="collapse alt_rules">
@@ -203,7 +203,11 @@ export default class SingleGame extends Component {
           </div>
 
         </div>
-        <Link to="#" id="delete_button" className="btn" onClick={() => this.handleDeleteGame(`${game.id}`)}><i className="material-icons">delete</i></Link>
+
+        {/*add this back in the delete_button after demo---
+          onClick={() => this.handleDeleteGame(`${game.id}`)}*/}
+
+        <Link to="#" id="delete_button" className="btn" ><i className="material-icons">delete</i></Link>
 
         <div>
           <a href='#myNavBar'>
