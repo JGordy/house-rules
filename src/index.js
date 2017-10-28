@@ -35,7 +35,7 @@ ReactDOM.render(
         <Route exact path='/House_Rules/games' component={GameList} />
         <Route exact path='/House_Rules/newGame' component={GameForm} />
         <Route exact path='/House_Rules/about' component={About} />
-        <Route exact path='/' component={App} />
+        {/*<Route exact path='/' component={App} />*/}
       </Switch>
     </BaseLayout>
   </BrowserRouter>
