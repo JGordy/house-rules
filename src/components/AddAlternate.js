@@ -51,7 +51,7 @@ export default class AddAlternate extends Component {
           objective: '',
           rules: ''
         })
-        this.props.history.push(`/House_Rules/games/${this.props.game.id}`);
+        this.props.history.push(`/house-rules/games/${this.props.game.id}`);
         // this.props.arrowToggle();
       } else {
 

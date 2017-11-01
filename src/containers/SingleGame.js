@@ -49,7 +49,7 @@ export default class SingleGame extends Component {
       console.log("Failure to delete: ", error);
     })
 
-    this.props.history.push('/House_Rules/games');
+    this.props.history.push('/house-rules/games');
 
   }
 
@@ -145,7 +145,7 @@ export default class SingleGame extends Component {
             </div>
 
             <div className="arrow_container">
-              <Link to='/House_Rules/games'>
+              <Link to='/house-rules/games'>
                 <i className="material-icons md-36">arrow_back</i>
               </Link>
             </div>

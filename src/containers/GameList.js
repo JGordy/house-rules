@@ -50,7 +50,7 @@ class GameList extends Component {
         }
 
         return <div key={game.id} className="each_game card-block card">
-                  <Link to={`/House_Rules/games/${game.id}`}>
+                  <Link to={`/house-rules/games/${game.id}`}>
                     <div className="game_initial"><i className="material-icons group" id={game.category}>{gameIcon}</i></div>
                     <div>
                        <h4 className="game_title card-title">{game.title}</h4>
@@ -87,7 +87,7 @@ class GameList extends Component {
         }
 
         return <div key={game.id} className="each_game card-block card">
-                  <Link to={`/House_Rules/games/${game.id}`}>
+                  <Link to={`/house-rules/games/${game.id}`}>
                     <div className="game_initial"><i className="material-icons group" id={game.category}>{gameIcon}</i></div>
                     <div>
                        <h4 className="game_title card-title">{game.title}</h4>
@@ -133,7 +133,7 @@ class GameList extends Component {
         {gamesList}
 
         <div>
-          <Link to='/House_Rules/newGame'>
+          <Link to='/house-rules/newGame'>
             <i className="material-icons md-36 FAB">add</i>
           </Link>
         </div>

@@ -15,14 +15,14 @@ class BaseLayout extends Component {
       let icon = document.getElementById("icon");
 
       if ((navBar.className === "topnav") &&
-          (endpoint !== "/House_Rules/")) {
+          (endpoint !== "/house-rules/")) {
           navBar.className += " responsive";
       } else {
           navBar.className = "topnav";
       }
 
       if ((icon.className === "icon") &&
-          (endpoint !== "/House_Rules/")) {
+          (endpoint !== "/house-rules/")) {
         icon.className += " rotate";
       } else {
         icon.className = "icon";
@@ -41,28 +41,28 @@ class BaseLayout extends Component {
 
           <nav className="topnav" id="myNavBar">
 
-            <Link className="Logo" to='#' onClick={() => this.handleNaviagation('/House_Rules/')}>
+            <Link className="Logo" to='#' onClick={() => this.handleNaviagation('/house-rules/')}>
             <img src={require('../images/house-rules-white.png')} alt="#"/>
             <span>House Rules</span></Link>
 
             <Link
-            className="GamesLink" to='#' onClick={() => this.handleNaviagation('/House_Rules/games')}>
+            className="GamesLink" to='#' onClick={() => this.handleNaviagation('/house-rules/games')}>
               <i className="material-icons">casino</i>
               Games
             </Link>
 
             <Link className="NewGameLink" to='#'
-            onClick={() => this.handleNaviagation('/House_Rules/newGame')}>
+            onClick={() => this.handleNaviagation('/house-rules/newGame')}>
               <i className="material-icons">add</i>
               Add Game
             </Link>
 
-            <Link className="AboutLink" to='#' onClick={() => this.handleNaviagation('/House_Rules/about')}>
+            <Link className="AboutLink" to='#' onClick={() => this.handleNaviagation('/house-rules/about')}>
               <i className="material-icons">local_library</i>
               About
             </Link>
 
-            <Link className="LogOutLink" to="#" onClick={() => this.handleNaviagation('/House_Rules/')}>
+            <Link className="LogOutLink" to="#" onClick={() => this.handleNaviagation('/house-rules/')}>
               <i className="material-icons">chevron_left</i>
               Log Out
             </Link>

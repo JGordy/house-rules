@@ -217,8 +217,8 @@ export default class GameForm extends Component {
           </div>
 
           <div className="form_submits">
-            <button className="btn" onClick={this.handleSubmit('/House_Rules/games')}>Submit</button>
-            <p className="another_game_link" onClick={this.handleSubmit('/House_Rules/newGame')}>or submit and add another game</p>
+            <button className="btn" onClick={this.handleSubmit('/house-rules/games')}>Submit</button>
+            <p className="another_game_link" onClick={this.handleSubmit('/house-rules/newGame')}>or submit and add another game</p>
           </div>
 
       </div>
