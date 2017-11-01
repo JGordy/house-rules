@@ -1,0 +1,16 @@
+{
+  "short_name": "House Rules",
+  "name": "House Rules",
+  "icons": [
+   {
+    "src": "android-icon-192x192.png",
+    "sizes": "192x192",
+    "type": "image/png",
+    "density": "4.0"
+   }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#02558b",
+  "background_color": "#ffffff"
+}
